@@ -1,0 +1,302 @@
+           
+<div data-example-id="table-within-panel" class="bs-example" style="margin-top:8px;">
+    <div class="panel panel-default"> 
+        <div class="panel-heading" style="background: #3374AD; font-size:18px; font-weight: bold;color: #FFFF00; padding: 17px 15px; "><b>Thông Tin Công Ty - Nhóm Thợ</b></div> 
+        <div class="panel-body"> 
+
+        </div>    
+           <table class="table"  > 
+            <tbody > 
+                <tr> 
+                    <td   class="detailinfo1">Tiêu Đề</td> 
+                    <td class="detailinfo"><b>{tintuyendung.title}</b></td>   
+                </tr> 
+                <tr> 
+                    <td class="detailinfo1">Tên Công Ty/Nhóm Thợ</td> 
+                    <td class="detailinfo"><b>{tintuyendung.tennhomtho}</b></td> 
+                </tr> 
+                <tr> 
+                    <td class="detailinfo1">Nội Dung Tin</td> 
+                    <td class="detailinfo"><b  style="font-size: 17px">{tintuyendung.noidung}</b></td> 
+                </tr> 
+                <tr> 
+                    <td   class="detailinfo1">Miêu tả công ty</td> 
+                    <td class="detailinfo" style="font-size: 1.1em"><f:format.html>{tintuyendung.mieutacty}</f:format.html></td>  
+                </tr> 
+                <tr> 
+                    <td   class="detailinfo1">Địa Chỉ liên hệ</td> 
+                    <td class="detailinfo">{tintuyendung.diachi} 
+                </tr>
+                <tr> 
+                    <td  class="detailinfo1">E-mail</td> 
+                    <td class="detailinfo">{tintuyendung.email}</td> 
+                </tr> 
+                <tr> 
+                    <td class="detailinfo1">Điện thoại</td> 
+                    <td class="detailinfo">{tintuyendung.phone}</td> 
+                </tr> 
+                <tr> 
+                    <td class="detailinfo1">Fax</td> 
+                    <td class="detailinfo">{tintuyendung.fax}</td> 
+                </tr> 
+                <tr>        
+                    <td  class="detailinfo1">Địa chỉ trang Web</td> 
+                    <td class="detailinfo">{tintuyendung.www}</td> 
+                </tr> 
+                <tr> 
+                    <td  class="detailinfo1"><b>Nhóm Ngành</b></td> 
+                    <td class="detailinfo">
+            <f:for each="{tintuyendung.kategorienganh}" as="kategorienganh">
+                {kategorienganh.ten},
+            </f:for>   
+            </td> 
+            </tr> 
+            <tr> 
+                <td  class="detailinfo1"><b>Chuyên Ngành</b></td> 
+                <td class="detailinfo">
+            <f:for each="{tintuyendung.unterkategorienganh}" as="unterkategorienganh">
+                {unterkategorienganh.ten},
+            </f:for>   
+            </td> 
+            </tr> 
+            <tr> 
+                <td   class="detailinfo1">Tĩnh/Thành Phố</td> 
+                <td class="detailinfo">
+            <f:for each="{tintuyendung.tinhthanhpho}" as="tinhthanhpho">
+                {tinhthanhpho.ten},
+            </f:for>   
+            </td>            
+            </tr>
+            <tr> 
+                <td  class="detailinfo1">Quận/Huyện/Tp Trực thuộc</td> 
+                <td class="detailinfo">
+            <f:for each="{tintuyendung.quanhuyen}" as="quanhuyen">
+                {quanhuyen.ten},
+            </f:for>   
+            </td>  
+
+            </tr>
+            <tr> 
+                <td  class="detailinfo1">Phường/Xã</td> 
+                <td class="detailinfo">{tintuyendung.phuongxa}  </tr>
+            <tr> 
+            <tr>        
+                <td   class="detailinfo1">Hình ảnh</td> 
+                <td style="color: #000; ">
+                    <br>
+                    <f:image src="fileadmin/dummy1s.jpg" alt="Không Có Hình Ảnh" width="250c" />
+                    <br>
+                </td> 
+            </tr> 
+            </tbody> 
+
+        </table>
+        <f:comment>
+        <table class="table"> 
+            <tbody> 
+                <tr> 
+                    <td   style="color: #3374AD; width: 20% "><b>Tiêu Đề</b></td> 
+                    <td style="color: #3374AD;font-weight: bold;color: #000; ">{tintuyendung.title}</td> 
+                </tr> 
+                <tr> 
+                    <td   style="color: #3374AD; width: 20% "><b>Nhóm Ngành</b></td> 
+                    <td style="color: #3374AD;font-weight: bold;color: #000;  ">
+            <f:for each="{tintuyendung.kategorienganh}" as="kategorienganh">
+                {kategorienganh.ten},
+            </f:for>   
+            </td> 
+            </tr> 
+            <tr> 
+                <td   style="color: #3374AD; width: 20% "><b>Chuyên Ngành</b></td> 
+                <td style="color: #3374AD;font-weight: bold;color: #000; ">
+            <f:for each="{tintuyendung.unterkategorienganh}" as="unterkategorienganh">
+                {unterkategorienganh.ten},
+            </f:for>   
+            </td> 
+            </tr> 
+            <tr> 
+                <td   style="color: #3374AD; ">Tĩnh/Thành Phố</td> 
+                <td style="color: #000;  ">
+            <f:for each="{tintuyendung.tinhthanhpho}" as="tinhthanhpho">
+                {tinhthanhpho.ten},
+            </f:for>   
+            </td>            
+            </tr>
+            <tr> 
+                <td   style="color: #3374AD; ">Quận/Huyện/Tp Trực thuộc</td> 
+                <td style="color: #000; ">
+            <f:for each="{tintuyendung.quanhuyen}" as="quanhuyen">
+                {quanhuyen.ten},
+            </f:for>   
+            </td>  
+
+            </tr>
+            <tr> 
+                <td   style="color: #3374AD; ">Phường/Xã</td> 
+                <td style="color: #000; ">{tintuyendung.phuongxa}  </tr>
+            <tr> 
+            <tr> 
+                <td   style="color: #3374AD; ">Tên Công Ty/Người Tìm</td> 
+                <td style="color: #3374AD; color: #000;">{tintuyendung.tennguoitim}</td>   </tr> 
+            <tr> 
+                <td   style="color: #3374AD; ">Miêu tả công ty</td> 
+                <td style="color: #3374AD; color: #000;">{tintuyendung.mieutacongviec}</td>   </tr> 
+
+            <td   style="color: #3374AD; ">Địa Chỉ liên hệ</td> 
+            <td style="color: #000; ">{tintuyendung.diachi}  </tr>
+            <tr> 
+                <td   style="color: #3374AD; ">E-mail</td> 
+                <td style="color:#000; ">{tintuyendung.email}</td> 
+            </tr> 
+            <tr> 
+                <td   style="color: #3374AD; ">Điện thoại</td> 
+                <td style="color: #000; ">{tintuyendung.phone}</td> 
+            </tr> 
+            <tr> 
+                <td   style="color: #3374AD; ">Fax</td> 
+                <td style="color: #000; ">{tintuyendung.fax}</td> 
+            </tr> 
+            <tr>        
+                <td   style="color: #3374AD;">Địa chỉ trang Web</td> 
+                <td style="color: #000; ">{tintuyendung.www}</td> 
+            </tr> 
+            <tr>        
+                <td   class="detailinfo1">Hình ảnh</td> 
+                <td style="color: #000; ">
+                    <br>
+            <f:image src="fileadmin/dummy1s.jpg" alt="Không Có Hình Ảnh" width="250c" />
+            <br>
+            </td> 
+            </tr> 
+            </tbody> 
+
+        </table>
+        </f:comment>
+    </div> 
+    <div class="row">   
+        <div class="col-md-12">
+            <f:link.action class="pull-left btn btn-primary"  style="font-weight: bold;font-size: 20px;" action="#">Quay Lại</f:link.action>
+        </div>     
+    </div>
+</div>
+
+
+<br><br>    <br><br>    <br><br>    <br><br>
+<f:comment>
+    <table class="tx-thosuachua" >
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.title" />
+        </td>
+        <td>
+            {tintuyendung.title}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.noidung" />
+        </td>
+        <td>
+            {tintuyendung.noidung}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.hinhanh" />
+        </td>
+        <td>
+        <f:image src="{tintuyendung.hinhanh.originalResource.publicUrl}" width="200"/>
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.tailieu" />
+        </td>
+        <td>
+            <a href="{tintuyendung.tailieu.originalResource.publicUrl}">
+                {tintuyendung.tailieu.originalResource.name}
+            </a>
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.tennhatuyendung" />
+        </td>
+        <td>
+            {tintuyendung.tennhatuyendung}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.mieutacty" />
+        </td>
+        <td>
+            {tintuyendung.mieutacty}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.diachi" />
+        </td>
+        <td>
+            {tintuyendung.diachi}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.email" />
+        </td>
+        <td>
+            {tintuyendung.email}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.phone" />
+        </td>
+        <td>
+            {tintuyendung.phone}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.fax" />
+        </td>
+        <td>
+            {tintuyendung.fax}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.www" />
+        </td>
+        <td>
+            {tintuyendung.www}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.lienhe" />
+        </td>
+        <td>
+            {tintuyendung.lienhe}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.batdau" />
+        </td>
+        <td>
+            {tintuyendung.batdau}
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <f:translate key="tx_thosuachua_domain_model_tintuyendung.ketthuc" />
+        </td>
+        <td>
+            {tintuyendung.ketthuc}
+        </td>
+        </tr>
+    </table>
+</f:comment>

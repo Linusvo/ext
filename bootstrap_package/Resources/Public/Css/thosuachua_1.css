@@ -1,0 +1,249 @@
+
+/* Navigation */
+
+.navbar-main > li > a {
+   line-height: 80px;
+    padding: 0 15px;
+   
+}
+.navbar-header-main .navbar-brand {
+    height: 80px;
+    line-height: 30px;
+    padding-top: 10px;
+}
+.header-logo{
+    padding: 18px 0;
+}
+
+@media (min-width: 992px){
+    .headerlogo{
+        width: 100%;
+    }
+}
+@media (max-width: 992px){
+    .headerlogo{
+        width: 60%;
+    }
+    .facebook{
+         displays: none;
+         width: 40%;
+         float:right;
+      }  
+     .facebook1{
+        width: 60%;
+      }  
+
+}
+@media (max-width: 528px){
+    .headerlogo{
+        width: 80%;
+    }
+}
+
+.searchform-vov{
+      padding:18px 0; 
+}
+
+.searchform-vov .form-control {
+    border: 1px solid #33abff;
+    color: #406786;
+    padding: 6px 5px;
+}
+.anmeldenformular-input .form-control{
+    height: 25px;
+}
+header .anmeldenformular-input{
+ // padding: 13px 0 6px;
+  padding: 19px 0 12px 5px;
+  background-color: #1d3f42;
+}
+.acount-regist{
+    text-align: left;
+    padding-left:15px;
+
+}
+
+.btn.btn-default.loginbtn{
+     height: 25px;
+      padding: 2px 7px;
+      width: 90px;
+      background-color: #2E6EA4;
+      //#444;
+    background-image: none;
+    border: medium none;
+    text-shadow: none;
+    color:#fff;
+}
+.anmeldenformular-input .form-inline{
+    text-align: left;
+    padding-bottom: 6px;
+}
+.anmeldenformular-input .inputlogin1{
+    padding: 0 15px;
+
+}
+.registformular-text{
+     padding: 12px 0px;
+    background-color: #1D3F42;
+    color:#fff;
+}
+
+.loginbtnaa{
+         padding: 0 15px;
+
+}
+.anmeldenformular-input .inputlogin2{
+    padding: 0 15px;
+}
+.searchform-vov .btn-default {
+  background-color: #3273ac;
+    border-color: #3273ac;
+    color: #fff;
+    text-shadow: 0 0px 0 #fff;
+    background-image:none;
+}
+.searchform-vov .btn-default:hover, .btn-default:focus {
+    background-color: #41C400;
+    color:#fff;
+    background-position: 0 -15px;
+}
+.dangnhap-header .btn-lg, .btn-group-lg > .btn {
+    border-radius: 6px;
+    font-size: 18px;
+    line-height: 0.65;
+    padding: 10px 16px;
+}
+header .btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: none;
+    outline-offset: -2px;
+}
+.registformular input{
+    height: 25px;
+    margin:  7px 0;
+  
+}
+header .form-inline .form-control {
+        width: 100%;
+}
+
+.btn-primary:active:hover,.btn-primary.active:hover,.open>.dropdown-toggle.btn-primary:hover,.btn-primary:active:focus,.btn-primary.active:focus,.open>.dropdown-toggle.btn-primary:focus,.btn-primary:active.focus,.btn-primary.active.focus,.open>.dropdown-toggle.btn-primary.focus{color:#ffffff;background-color:#0F334C;border-color:#0F334C;}
+
+.registformular-text1 h2{
+padding: 0px;
+margin: 0;
+  font-size: 18px;
+}
+header .registformular-text2 input{
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.btn.btn-default.loginbtn2{
+     height: 25px;
+      padding: 2px 7px;
+      width: 90px;
+        background-color: #3476B0;
+    background-image: none;
+    border: medium none;
+    text-shadow: none;
+    color:#fff;
+}
+header .registformular-text2 .form-control{
+  padding: 0 12px;
+   height: 24px;
+   margin-top: 10px;
+
+}
+
+
+/* Navigation Ende*/
+
+/* main content */
+
+.anmeldenformular-input{
+    background-color: #3273AC;
+    text-align: center;
+}
+
+.main-container{
+        padding: 2em 0;
+}
+.main-section .teaser-list  header {
+    backgrounds: #4AA8FE none repeat scroll 0 0;
+    background:#41C400;
+    border-bottom: 1px solid #706f6f;
+    color:#fff;
+    padding: 1.7em 4em 0.9em 1.1em;
+    position: relative;
+    text-transform: uppercase;
+}
+.main-section .teaser-list  header h2{
+    margin: 0;
+    font-weight: normal;
+    color:#000;
+      font-size: 1.23em;
+    font-weight: bold;
+    line-height: 0.8;
+}
+.main-section .icon-content{
+    background-colors: #ffffff;
+    border-radiuss: 1.5em;
+    display: block;
+    height: 2.9em;
+    margin-top: -1.45em;
+    position: absolute;
+    right: 0.5em;
+    top: 47%;
+    width: 2.9em;
+    color: #3071A8;
+    background-position: center 0.65em;
+    background-repeat: no-repeat;
+    background-size: 1.8em auto;
+    text-align: center;
+}
+.main-section .glyphicon.glyphicon-home{
+       top: 30%;
+       
+}
+.main-section .glyphicon.glyphicon-th{
+    top: 17%;
+    font-size: 2em;
+}
+
+.content-home {
+    paddings: 15px;
+}
+.content-home span {
+    font-weight: bold;
+    color: #0B2F3A;
+}
+.content-home .news a {
+    color: #0f334c;
+}
+.content-home .news {
+    border-bottom: 1px solid #bfbfbf;
+    padding: 0.8em 1em 0;
+}
+.content-home .news p{
+    margin: 6px 0 8px 0;
+}
+.main-section .teaser-list {
+    border-bottom: 1px solid #706f6f;
+    float: left;
+    width: 100%;
+}
+.main-section .teaser-list .module-link a {
+    clear: both;
+    color: #000;
+    display: block;
+    font-family: "Univers-67-CondBold",Arial,sans-serif;
+    line-height: 1;
+    padding: 0.6em 1em 0.9em;
+    position: relative;
+}
+body p{
+        font-family: "Univers-67-CondBold",Arial,sans-serif;
+         line-height: 1.6;
+}
+
+/*ende main content */
+

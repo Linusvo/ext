@@ -1,0 +1,83 @@
+<f:if condition="{configuration.insertAbove}">
+    <f:render section="paginator" arguments="{pagination: pagination,summeelementak:summeelementak,summeelemente:summeelement,anfangpagi:anfangpagi,unterkategorienghanh: unterkategorienghanh,tinhthanhpho: tinhthanhpho,quanhuyen: quanhuyen}" />
+</f:if>
+
+<f:renderChildren arguments="{contentArguments}" />
+
+<f:if condition="{configuration.insertBelow}">
+    <f:render section="paginator" arguments="{pagination: pagination,summeelementak:summeelementak,summeelemente:summeelement,anfangpagi:anfangpagi,unterkategorienghanh: unterkategorienghanh,tinhthanhpho: tinhthanhpho,quanhuyen: quanhuyen}" />
+</f:if>
+
+<f:section name="paginator">
+    <f:if condition="{pagination.pages}">
+        <div class="forum-post">
+            <f:comment>
+                <span class="forum-count" style="padding-left: 15px;font-size: 16px  !important; color:#000;font-weight: bold !important">Kết quả {anfangpagi}-{summeelementak} từ {summeelemente} </span>
+
+            </f:comment>
+            <span class="forum-count" style="padding-left: 15px;font-size: 16px  !important; color:#000;font-weight: bold !important">Kết quả {anfangpagi}-{summeelementak} từ {summeelemente} </span>
+
+            <div class="pull-right paginator">
+                <!-- BEGIN: Content of extension "pagebrowse", plugin "tx_pagebrowse_pi1" -->
+                <div class="tx-pagebrowse-pi1">
+        <nav class="pull-right forumli">
+        <!-- First -->
+
+
+        <!-- Previous -->
+            <f:if condition="{pagination.previousPage}">
+                <f:then>
+                        <f:if condition="{pagination.previousPage} > 1">
+                            <f:then>
+                                <!-- <f:translate key="previous" /> -->
+                                <f:widget.link arguments="{currentPage: pagination.previousPage}" class="previous-next"><span>‹</span></f:widget.link>
+                            </f:then>
+                            <f:else>
+                                <f:widget.link class="previous-next"><span>‹</span></f:widget.link>
+                            </f:else>
+                        </f:if>
+                </f:then>
+
+            </f:if>
+
+
+
+        <!-- Numbered pages -->
+        <f:for each="{pagination.pages}" as="page">
+            <f:if condition="{page.isCurrent}">
+                <f:then>
+                       <a  class="active"><span>{page.number}</span></a>
+                </f:then>
+                <f:else>
+                        <f:if condition="{page.number} > 1">
+                            <f:then>
+                                <f:widget.link arguments="{currentPage: page.number,unterkategorienghanh: unterkategorienghanh,tinhthanhpho: tinhthanhpho,quanhuyen: quanhuyen}"><span>{page.number}</span></f:widget.link>
+                            </f:then>
+                            <f:else>
+                                <f:widget.link  arguments="{currentPage: page.number,unterkategorienghanh: unterkategorienghanh,tinhthanhpho: tinhthanhpho,quanhuyen: quanhuyen}"><span>{page.number}</span></f:widget.link>
+                            </f:else>
+                        </f:if>
+                </f:else>
+            </f:if>
+        </f:for>
+
+        <!-- Next -->
+
+
+                <f:if condition="{pagination.nextPage}">
+                    <f:then>
+                        <f:widget.link arguments="{currentPage: pagination.nextPage}"  class="previous-next"><span>›</span></f:widget.link>
+                    </f:then>
+                    <f:else>
+
+                    </f:else>
+                </f:if>
+
+
+        </nav>
+                </div>
+                <!-- END: Content of extension "pagebrowse", plugin "tx_pagebrowse_pi1" -->
+            </div>
+        </div>
+    </f:if>
+</f:section>

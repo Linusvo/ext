@@ -1,0 +1,38 @@
+
+<f:layout name="Default" />
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Edit.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <f:comment>
+               <f:flashMessages renderMode="div" />
+
+<f:render partial="FormErrors" arguments="{object:Nhomtho}" /> 
+ 
+    </f:comment>
+
+    <br>  <br>
+    <div class="panel-heading" style="background-color: #DBDBDB"><b>Thay Đổi Thông Tin Nhóm Thợ </b></div> 
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default" style="padding: 15px;">   
+            <f:form action="update" name="nhomtho" object="{nhomtho}" >
+                <f:render partial="Nhomtho/FormFields" arguments="{unterkategorienganhs:unterkategorienganhs,kategorienganhs:kategorienganhs,nhomtho:nhomtho, quanhuyens:quanhuyens, tinhthanhs: tinhthanhs}" />
+                <br> 
+                <button type="submit" class="btn pull-right" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #3374AD; color:#fff; text-shadow: none">Lưu Thay Đổi</button>
+            <br> <br> <br>
+            </f:form>
+      
+        </div> 
+    </div>
+
+
+</f:section>

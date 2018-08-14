@@ -1,0 +1,44 @@
+
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <br>  <br>
+    <div class="panel-heading" style="background-color: #088A08"><h3 style="color:#fff;margin-bottom: 10px; margin-top: 10px">Tạo Mẩu Tin Tuyển Dụng </h3></div> 
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default" style="padding: 15px;">   
+            <br>
+            <f:form action="create"  enctype="multipart/form-data"  name="newTintuyendung" object="{newTintuyendung}">
+                <f:render partial="Tintuyendung/FormFields" arguments="{unterkategorienganhs:unterkategorienganhs,kategorienganhs:kategorienganhs,nhomtho:nhomtho, quanhuyens:quanhuyens, tinhthanhs: tinhthanhs,newfunktion:newfunktion}" />
+                <br> 
+                <hr class="hrcolor"> 
+                <a class="btn pull-left" href="/admin" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #E05500; color:#fff; text-shadow: none">Quay Lại</a>
+                <button type="submit"  class="btn pull-right" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #E05500; color:#fff; text-shadow: none">Lưu Mẩu Tin</button>
+                <br> <br> <br>
+            </f:form>
+        </div> 
+    </div>
+    <f:comment>
+        <h1>New Tintuyendung</h1>
+
+        <f:flashMessages renderMode="div" />
+
+        <f:render partial="FormErrors" arguments="{object:Tintuyendung}" />
+
+        <f:form action="create"  enctype="multipart/form-data"  name="newTintuyendung" object="{newTintuyendung}">
+            <f:render partial="Tintuyendung/FormFields" />
+            <f:form.submit value="Create new" />
+        </f:form>
+    </f:comment>
+</f:section>

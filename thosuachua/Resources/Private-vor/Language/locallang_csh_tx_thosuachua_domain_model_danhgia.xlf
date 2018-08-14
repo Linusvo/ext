@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-04-02T23:40:49Z" product-name="thosuachua">
+		<header/>
+		<body>
+			<trans-unit id="danhgia.description">
+				<source>danhgia</source>
+			</trans-unit>
+			<trans-unit id="sosao.description">
+				<source>sosao</source>
+			</trans-unit>
+			<trans-unit id="nhomtho.description">
+				<source>nhomtho</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

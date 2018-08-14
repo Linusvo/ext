@@ -1,0 +1,6 @@
+--- css---
+1. setup.txt/ configuration
+
+theme = EXT:bootstrap_package/Resources/Public/Less/Theme/theme.less
+them css 
+ theme = EXT:bootstrap_package/Resources/Public/Css/thosuachua.css

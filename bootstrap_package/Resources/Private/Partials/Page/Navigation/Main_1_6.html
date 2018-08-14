@@ -1,0 +1,100 @@
+<header class="navbar navbar-{themeNavigationstyle}{f:if(condition:logoFile,then:' navbar-has-image')}{f:if(condition:themeNavigationtype, else:' navbar-top', then:' navbar-{themeNavigationtype} navbar-fixed-{themeNavigationtype}')}">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header navbar-header-main">
+                <f:if condition="{logoFile}">
+                    <f:then>
+                        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-image">
+                            <img src="{f:uri.image(src: logoFile)}" alt="{logoAlt}" height="{logoHeight}" width="{logoWidth}">
+                        </f:link.page>
+                    </f:then>
+                    <f:else>
+                        <f:link.page pageUid="{rootPage}" class="navbar-brand">{siteTitle}</f:link.page>
+                    </f:else>
+                </f:if>
+                <f:if condition="{f:cObject(typoscriptObjectPath:'lib.navigation.main')}">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </f:if>
+                <span class="navbar-header-border-bottom"></span>
+            </div>
+            <nav class="navbar-collapse collapse" style="float:right;color: #27475e;font-family: Univers-67-CondBold,Arial,sans-serif;" role="navigation">
+            <ul class="nav navbar-nav navbar-main">
+                 <f:cObject typoscriptObjectPath="lib.navigation.main"/>
+                <li style="padding: 6.5px 0">
+                                           <a href="dang-nhap" style="background: #F4AB45; padding: 12px 5px !important;color: #fff !important;">Đăng Nhập/Đăng Ký</a>
+                 </li>
+            </ul>
+            </nav>
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-md-12">
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+                    <form class="form-inline" role="form">
+                        <div class="row">
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+
+                                    <select class="form-control" >
+                                        <option>Tĩnh/Thành Phố</option>
+                                        <option>2asdasdasdasdasdasdasdasdasdasdasdasdsad</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="form-group">
+
+                                    <select class="form-control">
+                                        <option>Quận Huyện &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class=" col-md-2">
+                                <div class="form-group">
+                                    <select class="form-control"  >
+                                        <option>Nhóm Ngành &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text"  placeholder="Quí vị hãy nhập vào từ cần tìm"  class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                      <div class="dangnhap-header">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt">Tìm Kiếm</button>
+                                </div>
+                             
+                            </div>
+
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</header>

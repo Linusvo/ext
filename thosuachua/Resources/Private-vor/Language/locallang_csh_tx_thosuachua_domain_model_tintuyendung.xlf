@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-04-02T23:40:49Z" product-name="thosuachua">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="noidung.description">
+				<source>noidung</source>
+			</trans-unit>
+			<trans-unit id="hinhanh.description">
+				<source>hinhanh</source>
+			</trans-unit>
+			<trans-unit id="tailieu.description">
+				<source>tailieu</source>
+			</trans-unit>
+			<trans-unit id="tennhatuyendung.description">
+				<source>tennhatuyendung</source>
+			</trans-unit>
+			<trans-unit id="mieutacty.description">
+				<source>mieutacty</source>
+			</trans-unit>
+			<trans-unit id="diachi.description">
+				<source>diachi</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="phone.description">
+				<source>phone</source>
+			</trans-unit>
+			<trans-unit id="fax.description">
+				<source>fax</source>
+			</trans-unit>
+			<trans-unit id="www.description">
+				<source>www</source>
+			</trans-unit>
+			<trans-unit id="lienhe.description">
+				<source>lienhe</source>
+			</trans-unit>
+			<trans-unit id="batdau.description">
+				<source>batdau</source>
+			</trans-unit>
+			<trans-unit id="ketthuc.description">
+				<source>ketthuc</source>
+			</trans-unit>
+			<trans-unit id="adminstrator.description">
+				<source>adminstrator</source>
+			</trans-unit>
+			<trans-unit id="tinhthanhpho.description">
+				<source>tinhthanhpho</source>
+			</trans-unit>
+			<trans-unit id="quanhuyen.description">
+				<source>quanhuyen</source>
+			</trans-unit>
+			<trans-unit id="kategorienganh.description">
+				<source>kategorienganh</source>
+			</trans-unit>
+			<trans-unit id="unterkategorienganh.description">
+				<source>unterkategorienganh</source>
+			</trans-unit>
+			<trans-unit id="danhgia.description">
+				<source>danhgia</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

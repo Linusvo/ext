@@ -1,0 +1,37 @@
+<footer>
+<section class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '10'}"/>
+            </div>
+            <div class="col-sm-4">
+                <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '11'}"/>
+            </div>
+            <div class="col-sm-4">
+                <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '12'}"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="meta-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 language">
+                <f:comment>
+                    <f:cObject typoscriptObjectPath="lib.language"/>
+                </f:comment>
+            </div>
+            <f:if condition="{themeCopyright}">
+                <div class="col-md-8 copyright" role="contentinfo">
+                    Powered by <b>Viet Nam Media Center and Solution</b>
+                    <f:comment>
+                        <f:format.html>{themeCopyrightText}</f:format.html>  
+                    </f:comment>                  
+                </div>
+            </f:if>
+        </div>
+    </div>
+</section>
+</footer>

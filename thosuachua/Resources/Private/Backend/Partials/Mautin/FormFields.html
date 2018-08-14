@@ -1,0 +1,29 @@
+
+<label for="title">
+	<f:translate key="tx_thosuachua_domain_model_mautin.title" />
+</label><br />
+	<f:form.textfield property="title" /><br />
+<label for="noidung">
+	<f:translate key="tx_thosuachua_domain_model_mautin.noidung" />
+</label><br />
+	<f:form.textarea property="noidung" cols="40" rows="15" /><br />
+<label for="hinhanh">
+	<f:translate key="tx_thosuachua_domain_model_mautin.hinhanh" />
+</label><br />
+	<span>File upload is not implemented!</span><br /><br />
+<label for="link">
+	<f:translate key="tx_thosuachua_domain_model_mautin.link" />
+</label><br />
+	<f:form.textfield property="link" /><br />
+<label for="batdau">
+	<f:translate key="tx_thosuachua_domain_model_mautin.batdau" />
+</label><br />
+	<f:form.textfield property="batdau"  value="{mautin.batdau->f:format.date()}" /><br />
+<label for="ketthuc">
+	<f:translate key="tx_thosuachua_domain_model_mautin.ketthuc" />
+</label><br />
+	<f:form.textfield property="ketthuc"  value="{mautin.ketthuc->f:format.date()}" /><br />
+<label for="www">
+	<f:translate key="tx_thosuachua_domain_model_mautin.www" />
+</label><br />
+	<f:form.textfield property="www" /><br />

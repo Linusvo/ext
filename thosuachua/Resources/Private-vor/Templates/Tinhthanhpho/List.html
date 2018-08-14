@@ -1,0 +1,41 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Tinhthanhpho</h1>
+
+<f:flashMessages renderMode="div" />
+
+<table  class="tx_thosuachua" >
+	<tr>
+		<th><f:translate key="tx_thosuachua_domain_model_tinhthanhpho.ten" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tinhthanhpho.maso" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tinhthanhpho.map" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{tinhthanhphos}" as="tinhthanhpho">
+		<tr>
+			<td><f:link.action action="show" arguments="{tinhthanhpho : tinhthanhpho}"> {tinhthanhpho.ten}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tinhthanhpho : tinhthanhpho}"> {tinhthanhpho.maso}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tinhthanhpho : tinhthanhpho}"> {tinhthanhpho.map}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{tinhthanhpho : tinhthanhpho}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{tinhthanhpho : tinhthanhpho}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Tinhthanhpho</f:link.action>
+</f:section>

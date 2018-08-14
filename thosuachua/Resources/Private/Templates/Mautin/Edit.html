@@ -1,0 +1,29 @@
+
+<f:layout name="Default" />
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Edit.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <f:comment>
+        <h1>Edit Mautin</h1>
+
+<f:flashMessages renderMode="div" />
+
+<f:render partial="FormErrors" arguments="{object:Mautin}" />
+    </f:comment>
+
+
+<f:form action="update" name="mautin" object="{mautin}" >
+<f:render partial="Mautin/FormFields_1" arguments="{mautin:mautin}" />
+	<f:form.submit value="Save" />
+</f:form>
+</f:section>

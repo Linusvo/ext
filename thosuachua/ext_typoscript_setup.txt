@@ -1,0 +1,21 @@
+
+config.tx_extbase{
+    persistence{
+        classes{
+
+            TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
+                subclasses {
+                    Tx_Thosuachua_Nhomtho = VOV\Thosuachua\Domain\Model\Nhomtho
+					
+          		}
+            }
+            VOV\Thosuachua\Domain\Model\Nhomtho {
+                mapping {
+                    tableName = fe_users
+                    recordType = Tx_Thosuachua_Nhomtho
+                }
+            }
+            
+    	}
+    }
+}

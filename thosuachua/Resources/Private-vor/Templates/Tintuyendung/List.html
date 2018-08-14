@@ -1,0 +1,63 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Tintuyendung</h1>
+
+<f:flashMessages renderMode="div" />
+
+<table  class="tx_thosuachua" >
+	<tr>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.title" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.noidung" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.hinhanh" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.tailieu" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.tennhatuyendung" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.mieutacty" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.diachi" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.email" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.phone" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.fax" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.www" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.lienhe" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.batdau" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintuyendung.ketthuc" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{tintuyendungs}" as="tintuyendung">
+		<tr>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.noidung}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.hinhanh.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.tailieu.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.tennhatuyendung}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.mieutacty}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.diachi}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.phone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.fax}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.www}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.lienhe}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.batdau}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintuyendung : tintuyendung}"> {tintuyendung.ketthuc}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{tintuyendung : tintuyendung}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{tintuyendung : tintuyendung}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Tintuyendung</f:link.action>
+</f:section>

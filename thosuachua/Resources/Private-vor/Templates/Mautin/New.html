@@ -1,0 +1,42 @@
+
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+
+<f:flashMessages renderMode="div" />
+
+<f:render partial="FormErrors" arguments="{object:Mautin}" />
+    <br>
+    <br>
+    <div class="panel-heading" style="background-color: #DBDBDB"><b>TẠO MẨU TIN MỚI </b></div> 
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default" style="padding: 15px;">   
+           <f:form action="create"  enctype="multipart/form-data"  name="newMautin" object="{newMautin}">
+               <f:render partial="Mautin/FormFields" arguments="{unterkategorienganhs:unterkategorienganhs,kategorienganhs:kategorienganhs,nhomtho:nhomtho, quanhuyens:quanhuyens, tinhthanhs: tinhthanhs}" />
+                <br> 
+                <button type="submit" class="btn pull-right" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #3374AD; color:#fff; text-shadow: none">Lưu Thay Đổi</button>
+            <br> <br> <br>
+            </f:form>
+        </div> 
+    </div>
+
+<f:comment>
+    <f:form action="create"  enctype="multipart/form-data"  name="newMautin" object="{newMautin}">
+<f:render partial="Mautin/FormFields" />
+	<f:form.submit value="Create new" />
+</f:form>
+</f:comment>
+
+</f:section>

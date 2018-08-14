@@ -1,0 +1,184 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+
+    <div class="container">
+        <div class="row">
+            <main class="col-md-6" role="main">
+                <div class="main-container">
+                    <article class="teaser-list">
+                        <header>
+                            <h2 style="height: 24px;">Thợ tìm việc</h2>
+                            <i class="icon-content">
+                                <p class="glyphicon glyphicon-th"></p>
+                            </i>
+                        </header>
+                        <div class="content-home">
+                            <div class="same-height">
+                                <f:for each="{nomitmautin}" as="tho">
+                                    <div class="news">
+                                        <span><f:format.date format="d.m.Y">{tho.crdate}</f:format.date>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp; <f:format.crop maxCharacters="50">{tho.ten}</f:format.crop>   </span>
+                                        <p>
+                                   <f:link.action pageUid="49" action="show" arguments="{nhomtho: tho}">
+                                                <f:format.crop maxCharacters="150">{tho.mieuta}</f:format.crop>    
+                                                </f:link.action>
+                                        </p>
+                                    </div>
+                                </f:for>                   
+
+                            </div>
+                            <footer class="module-link">
+                                <a href="presse/pressemitteilungen/"><b>Xem Tất Cả</b>&nbsp;&nbsp;<span>›</span></a>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </main>
+            <div class="col-md-6">
+                <div class="main-container">
+                    <article class="teaser-list">
+                        <header>
+                            <h2 style="height: 24px;">Việc tìm thợ</h2>
+                            <i class="icon-content">
+                                <p class="glyphicon glyphicon-th"></p>
+                            </i>
+                        </header>
+                        <div class="content-home">
+                            <div class="same-height" >
+                                  <f:for each="{mitmautin}" as="tho1">
+                                    <div class="news">
+                                        <span><f:format.date format="d.m.Y">{tho1.crdate}</f:format.date>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;  <f:format.crop maxCharacters="50">{tho1.ten}</f:format.crop>   </span>
+                                        <p>
+                                   <f:link.action pageUid="49" action="show" arguments="{nhomtho: tho1}">
+                                                <f:format.crop maxCharacters="150">{tho1.mieuta}</f:format.crop>    
+                                                </f:link.action>
+                                        </p>
+                                    </div>
+                                </f:for>   
+
+                            </div>
+                            <footer class="module-link">
+                                <a href="presse/pressemitteilungen/"><b>Xem Tất Cả</b>&nbsp;&nbsp;<span>›</span></a>
+                            </footer>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+            <div class="row">
+		<div class="col-md-12">
+            <article class="teaser-list" style="margin-top:70px; margin-bottom: 30px;border: none">
+                <header style="">
+                            <h2 style="height: 24px;">Thông tin và dịch vụ</h2>
+                            <i class="icon-content">
+                                <p class="glyphicon glyphicon-th"></p>
+                            </i>
+                        </header>
+                  </div>
+            </div>
+            
+            <div class="row">
+		<div class="col-md-4">
+			<article class="teaser" style=" height: 398px;">
+				<header>
+					<div class="img-box copy">
+						
+							<a href="#">
+								<img width="100%"  height="238" alt="" src="fileadmin/user_upload/test1.jpg">
+							</a>
+							
+						
+					</div>
+					<h2 style="height: 41px;">
+						<a style=" color: #DB0050" href="#">Tuyển Dụng Trên Toàn Quốc</a>
+					</h2>
+				</header>
+				<div class="fix">
+					<p>
+						<a href="publikationen/bkk-gesundheitsatlas/">
+							Hệ thống luôn được cấp nhật những nhu cầu tuyết dụng trên toàn quốc. 
+						</a>
+					</p>
+					<div class="module-content">
+					</div>
+				</div>
+			</article>
+		</div>
+
+		<div class="col-md-4">
+	<article class="teaser" style="height: 398px;">
+				<header>
+					<div class="img-box copy">
+						
+							<a href="/shop/">
+								<img width="100%" height="239" src="fileadmin/user_upload/test2.jpg">
+							</a>
+							
+						
+					</div>
+					<h2 style="height: 41px; color: #DB0050">
+						<a style=" color: #DB0050" href="/shop/">Cữa Hàng Online</a>
+					</h2>
+				</header>
+				<div class="fix">
+					<p>
+						<a href="shop">
+							Cữa hàng online của chúng tôi cung cấp cho quí vị những dòng sản phẩm chất lượng tốt của các hàng ủy tín với giá tốt nhất.
+						</a>
+					</p>
+					<div class="module-content">
+					</div>
+				</div>
+			</article>
+		</div>
+		
+		<div class="col-md-4">
+			<article class="teaser" style="height: 398px;">
+				<header>
+					<div class="img-box copy">
+						
+							<a href="#">
+								<img width="100%" height="239" alt="Luxemburger Deklaration" src="fileadmin/user_upload/test3.jpg">
+							</a>
+							
+						
+					</div>
+					<h2 style="height: 41px;">
+						<a style=" color: #DB0050" href="#">Tin Tức Và Tài Liệu</a>
+					</h2>
+				</header>
+				<div class="fix">
+					<p>
+						<a href="#">
+							Tại đây quí vị có thể tìm thấy những tin tức về thợ cũng như tài liệu hay hướng dẩn chuyên ngành.
+						</a>
+					</p>
+					<div class="module-content">
+					</div>
+				</div>
+			</article>
+		</div>
+		
+    
+	</div>
+    </div>
+
+</f:section>

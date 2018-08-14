@@ -1,0 +1,34 @@
+
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+               
+    <br>  <br>
+    <div class="panel-heading" style="background-color: #DBDBDB"><b>Thay Đổi Thông Tin Nhóm Thợ </b></div> 
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default" style="padding: 15px;">   
+
+            <f:form action="create"  enctype="multipart/form-data"  name="newTintimviec" object="{newTintimviec}">
+                <f:render partial="Tintimviec/FormFields"  arguments="{unterkategorienganh1s:unterkategorienganh1s,newfunktion:newfunktion,unterkategorienganhs:unterkategorienganhs,kategorienganhs:kategorienganhs,nhomtho:nhomtho, quanhuyens:quanhuyens, tinhthanhs: tinhthanhs}" />
+               <br> 
+                  <hr class="hrcolor"> 
+                <a class="btn pull-left" href="/admin" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #E05500; color:#fff; text-shadow: none">Quay Lại</a>
+                <button type="submit"  class="btn pull-right" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #E05500; color:#fff; text-shadow: none">Lưu Mẩu Tin</button>
+              <br> <br> <br>
+            </f:form>
+      
+        </div> 
+    </div>
+
+</f:section>

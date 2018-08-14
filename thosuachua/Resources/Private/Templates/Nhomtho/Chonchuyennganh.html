@@ -1,0 +1,11 @@
+<f:comment>
+<f:form.select name="tx_thosuachua_admin[nhomtho][unterkategorienganh]" property="unterkategorienganh"  multiple="multiple"    options="{unterkategorienganhs}"  optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+</f:comment>
+<f:if condition="{viectimtho}">
+    <f:then>
+<f:form.select name="tx_thosuachua_admin[newViectimtho][unterkategorienganh]" property="unterkategorienganh"  multiple="multiple"    options="{unterkategorienganhs}"  optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+    </f:then>
+    <f:else>
+<f:form.select name="tx_thosuachua_admin[newThotimviec][unterkategorienganh]" property="unterkategorienganh"  multiple="multiple"    options="{unterkategorienganhs}"  optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+    </f:else>
+  </f:if>

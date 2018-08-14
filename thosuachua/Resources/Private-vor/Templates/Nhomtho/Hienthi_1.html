@@ -1,0 +1,189 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+
+    <div class="container">
+        <div class="row">
+            <main class="col-md-6" role="main">
+                <div class="main-container">
+                    <article class="teaser-list">
+                        <header>
+                            <h2 style="height: 24px;">Thợ tìm việc</h2>
+                            <i class="icon-content">
+                                <p class="glyphicon glyphicon-th"></p>
+                            </i>
+                        </header>
+                        <div class="content-home">
+                            <div class="same-height">
+                                <f:for each="{nomitmautin}" as="tho">
+                                    <div class="news">
+                                        <span><f:format.date format="d.m.Y">{tho.crdate}</f:format.date>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp; <f:format.crop maxCharacters="50">{tho.ten}</f:format.crop>   </span>
+                                        <p>
+                                   <f:link.action pageUid="49" action="show" arguments="{nhomtho: tho}">
+                                                <f:format.crop maxCharacters="150">{tho.mieuta}</f:format.crop>    
+                                                </f:link.action>
+                                        </p>
+                                    </div>
+                                </f:for>                   
+
+                            </div>
+                            <footer class="module-link">
+                                <a href="presse/pressemitteilungen/"><b>Xem Tất Cả</b>&nbsp;&nbsp;<span>›</span></a>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </main>
+            <div class="col-md-6">
+                <div class="main-container">
+                    <article class="teaser-list">
+                        <header>
+                            <h2 style="height: 24px;">Việc tìm thợ</h2>
+                            <i class="icon-content">
+                                <p class="glyphicon glyphicon-th"></p>
+                            </i>
+                        </header>
+                        <div class="content-home">
+                            <div class="same-height" >
+                                  <f:for each="{mitmautin}" as="tho1">
+                                    <div class="news">
+                                        <span><f:format.date format="d.m.Y">{tho1.crdate}</f:format.date>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;  <f:format.crop maxCharacters="50">{tho1.ten}</f:format.crop>   </span>
+                                        <p>
+                                   <f:link.action pageUid="49" action="show" arguments="{nhomtho: tho1}">
+                                                <f:format.crop maxCharacters="150">{tho1.mieuta}</f:format.crop>    
+                                                </f:link.action>
+                                        </p>
+                                    </div>
+                                </f:for>   
+
+                            </div>
+                            <footer class="module-link">
+                                <a href="presse/pressemitteilungen/"><b>Xem Tất Cả</b>&nbsp;&nbsp;<span>›</span></a>
+                            </footer>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+                           <div class="row">
+		<div class="col-md-12">
+                    <article class="teaser" style="margin-top:50px; height: 58px; background: #3374AD">
+                        
+                    </article>
+                  </div>
+            </div>
+            
+            <div class="row">
+		<div class="col-md-4">
+			<article class="teaser" style="height: 398px;">
+				<header>
+					<div class="img-box copy">
+						
+							<a href="publikationen/bkk-gesundheitsatlas/">
+								<img width="365" height="238" alt="" src="fileadmin/publikationen/gesundheitsatlas/teaser_gesundheitsatlas-gross.jpg">
+							</a>
+							
+						
+					</div>
+					<h2 style="height: 41px;">
+						<a href="publikationen/bkk-gesundheitsatlas/">BKK Gesundheitsatlas 2015</a>
+					</h2>
+				</header>
+				<div class="fix">
+					<p>
+						<a href="publikationen/bkk-gesundheitsatlas/">
+							Gesundheit in Regionen - Blickpunkt Psyche
+						</a>
+					</p>
+					<div class="module-content">
+					</div>
+				</div>
+			</article>
+		</div>
+
+		<div class="col-md-4">
+			<article class="teaser" style="height: 398px;">
+				<header>
+					<div class="img-box copy">
+						
+							<a target="_top" href="http://www.bkk-dachverband.de/karriere/stellenportal/ansicht/list/detail/Stellenangebote/">
+								<img width="365" height="239" alt="Karriere" src="fileadmin/stellenangebote/teaser_karriere.jpg">
+							</a>
+							
+								<span>&copy;</span>
+								<div class="copy-box closed">
+									<p><strong>Copyright-Informationen</strong></p>
+									<br>
+									<p class="bodytext">suedhang/Corbis</p>
+									<br>
+									<p><span class="close-copy-box">(Fenster schließen)</span></p>
+								</div>
+							
+						
+					</div>
+					<h2 style="height: 41px;">
+						<a href="http://www.bkk-dachverband.de/karriere/stellenportal/ansicht/list/detail/Stellenangebote/" title="Karriere">Karriere</a>
+					</h2>
+				</header>
+				<div class="fix">
+					<p>
+						<a href="http://www.bkk-dachverband.de/karriere/stellenportal/ansicht/list/detail/Stellenangebote/" title="Karriere">
+							Wir bieten Ihnen die Möglichkeit, in einem attraktiven Arbeitsumfeld an der Gestaltung des Gesundheitswesens mitzuwirken.
+						</a>
+					</p>
+					<div class="module-content">
+					</div>
+				</div>
+			</article>
+		</div>
+		
+		<div class="col-md-4">
+			<article class="teaser" style="height: 398px;">
+				<header>
+					<div class="img-box copy">
+						
+							<a href="gesundheit/luxemburger-deklaration/">
+								<img width="365" height="239" alt="Luxemburger Deklaration" src="fileadmin/publikationen/luxemburger_deklaration/luxemburger_deklaration_teaser_gross.jpg">
+							</a>
+							
+						
+					</div>
+					<h2 style="height: 41px;">
+						<a href="gesundheit/luxemburger-deklaration/">Luxemburger Deklaration</a>
+					</h2>
+				</header>
+				<div class="fix">
+					<p>
+						<a href="gesundheit/luxemburger-deklaration/">
+							Die Betriebliche Gesundheitsförderung in der Europäischen Union.
+						</a>
+					</p>
+					<div class="module-content">
+					</div>
+				</div>
+			</article>
+		</div>
+		
+    
+	</div>
+    </div>
+
+</f:section>

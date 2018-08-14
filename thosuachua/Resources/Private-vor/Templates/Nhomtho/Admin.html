@@ -1,0 +1,228 @@
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <br><br>
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default" style=""> 
+    
+            <div class="panel-heading"><b>Thông Tin Tài Khoản</b> <b style="float: right"><f:cObject typoscriptObjectPath="lib.loginContent" /></b> </div> 
+            <div class="panel-body"> 
+                    <p style="color: #3374AD;">
+                        Để khách hàng có đủ thông tin về công ty hay nhóm thợ của quí vị. Quí vị ádasd
+                    </p>
+            </div>    
+            <table class="table"> 
+                <tbody> 
+                    <tr> 
+                        <td   style=" width: 50% "><b>Tên tài khoản</b></td> 
+                        <td style=" ">{nhomtho.lastName} {nhomtho.firstName}</td> 
+                    </tr> 
+                    <tr> 
+                        <td   style="color: #3374AD; width: 20% "><b>Tên tài khoản</b></td> 
+                        <td style="color: #3374AD; ">{nhomtho.username}</td> 
+                    </tr> 
+                    <tr> 
+                        <td   style="color: #3374AD; ">E-mail</td> 
+                        <td style="color: #3374AD; ">{nhomtho.email} </td> 
+                    </tr> 
+                    <tr> 
+                        <td   style="color: #3374AD; ">Newsletter ( Nhận tin mới từ hệ thống)</td> 
+                        <td style="color: #3374AD; ">Có </td> 
+                    </tr> 
+                    <tr> 
+                        <td   style="color: #3374AD; ">Hình ảnh</td> 
+                        <td style="color: #3374AD; "><img width="190px;" src="http://www.drodd.com/images10/flower-wallpaper-10.jpg"></td> 
+                    </tr> 
+                </tbody> 
+            </table>
+
+
+        </div> 
+        <div class="row">   
+            <div class="col-md-12">
+                <a class="pull-right btn btn-primary" style="font-weight: bold;font-size: 20px;"  href="admin/thay-doi">Thay Đổi Tài Khoản</a>
+            </div>     
+        </div>
+    </div>
+    <f:if condition="{nhomtho.status}==1">
+
+        <br> 
+        <br>    
+        <div data-example-id="table-within-panel" class="bs-example">
+            <div class="panel panel-default"> 
+
+                <div class="panel-heading"><b>Thông Tin Công Ty/Nhóm Thợ</b></div> 
+                <div class="panel-body"> 
+
+                    <p>
+                        Tại đây quí vị có thể tạo mẩu tin mới.Để tạo mẩu tin mới thành công quí vị phải điền đầy một số mục 
+                        bắt buộc, như mục đích, nội dụng, địa điểm.  <br>
+                        Hiện tại quí vị được đăng tối đa 3 mẩu tin. Mỗi mẩu tin được tải lên tối đa một hình ảnh và hình ảnh không
+                        quá 200kB.<br>
+                        Mẩu tin của quí ví chỉ được kích hoạt một tháng, sau đó sẽ tự động ẩn. Nếu quí vị muốn mẩu tin tiếp 
+                        tuc hiển thị, quí vị đơn giản ấn vào nút kích hoạt, sau đó mẩu tin được kích hoạt tiếp một tháng.
+                        Trường hợp mẩu tin đăng hiển thị, nếu quí vị muốn tắt hiển thị, quí vị đơn giản ấn vào nút ẩn bên cạch mẩu tin. <br>
+                        Nếu quí vị gặp khó khăn trong bất kỳ khâu nào, chúng tôi sẵn sàng tư vấn cho quí vị.
+                        Quí vị có thể liên với chúng tôi qua emai hoặc điện thoại, báo cho chúng tôi biết nội dung yêu cầu và
+                        địa chỉ email mà quí vị dùng cho việc đăng nhập hệ thống của chúng tôi.
+
+                    </p>
+                </div>    
+                <table class="table"> 
+
+                    <tbody> 
+                        <tr> 
+                            <td   style="color: #3374AD; width: 20% "><b>Tên Công Ty/Nhóm Thợ</b></td> 
+                            <td style="color: #3374AD; ">{nhomtho.ten}</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; width: 20% "><b>Nhóm Ngành</b></td> 
+                            <td style="color: #3374AD; ">Nếu quí vị gặp khó khăn trong bất</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; width: 20% "><b>Chuyên Ngành</b></td> 
+                            <td style="color: #3374AD; ">Nếu quí vị gặp khó khăn trong bất</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; ">Miêu tả công ty</td> 
+                            <td style="color: #3374AD; ">{nhomtho.mieuta}  </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; ">Tĩnh/Thành Phố</td> 
+                            <td style="color: #3374AD; ">{nhomtho.diachi}  </tr>
+                        <tr> 
+                            <td   style="color: #3374AD; ">Quận/Huyện</td> 
+                            <td style="color: #3374AD; ">{nhomtho.diachi}  </tr>
+                        <tr> 
+                            <td   style="color: #3374AD; ">Phường/Xã</td> 
+                            <td style="color: #3374AD; ">{nhomtho.diachi}  </tr>
+                        <tr> 
+                            <td   style="color: #3374AD; ">Địa Chỉ đường phố</td> 
+                            <td style="color: #3374AD; ">{nhomtho.diachi}  </tr>
+                        <tr> 
+                            <td   style="color: #3374AD; ">E-mail</td> 
+                            <td style="color: #3374AD; ">{nhomtho.emailcty}</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; ">Điện thoại</td> 
+                            <td style="color: #3374AD; ">{nhomtho.dienthoai}</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; ">Fax</td> 
+                            <td style="color: #3374AD; ">{nhomtho.sofax}</td> 
+                        </tr> 
+                        <tr>        
+                            <td   style="color: #3374AD;">Địa chỉ trang Web</td> 
+                            <td style="color: #3374AD; ">{nhomtho.trangweb}</td> 
+                        </tr> 
+
+                    </tbody> 
+                </table>
+
+
+            </div> 
+            <div class="row">   
+                <div class="col-md-12">
+                    <f:link.action class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" action="edit" arguments="{nhomtho: nhomtho}">Thay Đổi Thông Tin</f:link.action>
+                </div>     
+            </div>
+        </div>
+
+    </f:if>
+    <br><br>
+
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default"> 
+
+            <div class="panel-heading"><b>Quản Trị Đăng Tin </b></div> 
+            <div class="panel-body"> 
+                <p>
+                    Tại đây quí vị có thể tạo mẩu tin tìm thợ.
+                    <b style="color: #3374AD; font-size: 12px;">Để tạo mẩu tin mới hiệu quả quí vị nên hoàn thành nội dung tài khoản phía trên.</b><br>
+                    Hiện tại quí vị được đăng tối đa 3 mẩu tin.
+                    Mẩu tin của quí ví chỉ được kích hoạt một tháng, sau đó sẽ tự động ẩn. Nếu quí vị muốn mẩu tin tiếp 
+                    tuc hiển thị, quí vị đơn giản ấn vào nút kích hoạt, sau đó mẩu tin được kích hoạt tiếp một tháng.
+                    Trường hợp mẩu tin đăng hiển thị, nếu quí vị muốn tắt hiển thị thì ấn vào nút ẩn bên cạch mẩu tin. <br>
+                    Trương hợp gặp khó khăn trong bất kỳ khâu nào, chúng tôi sẵn sàng tư vấn cho quí vị.
+                    Quí vị có thể liên với chúng tôi qua emai hoặc điện thoại, mô tả cho chúng tôi biết vấn đề quí vị gặp khó khăn, chúng tôi rất 
+                    vui lòng được tư vấn cho quí vị.
+                </p>
+                <f:comment>
+                                   
+                <p>
+                    Tại đây quí vị có thể tạo mẩu tin tìm thợ.
+                    <b style="color: #3374AD;">Để tạo mẩu tin mới hiệu quả quí vị nên hoàn thành nội dung tài khoản phía trên.</b><br>
+                    Hiện tại quí vị được đăng tối đa 3 mẩu tin. Mỗi mẩu tin được tải lên tối đa một hình ảnh và hình ảnh không
+                    quá 200kB.<br>
+                    Mẩu tin của quí ví chỉ được kích hoạt một tháng, sau đó sẽ tự động ẩn. Nếu quí vị muốn mẩu tin tiếp 
+                    tuc hiển thị, quí vị đơn giản ấn vào nút kích hoạt, sau đó mẩu tin được kích hoạt tiếp một tháng.
+                    Trường hợp mẩu tin đăng hiển thị, nếu quí vị muốn tắt hiển thị, quí vị đơn giản ấn vào nút ẩn bên cạch mẩu tin. <br>
+                    Nếu quí vị gặp khó khăn trong bất kỳ khâu nào, chúng tôi sẵn sàng tư vấn cho quí vị.
+                    Quí vị có thể liên với chúng tôi qua emai hoặc điện thoại, báo cho chúng tôi biết nội dung yêu cầu và
+                    địa chỉ email mà quí vị dùng cho việc đăng nhập hệ thống của chúng tôi.
+
+                </p>
+ 
+                </f:comment>
+
+            </div>  
+            <table class="table"> 
+                <thead> 
+                    <tr> 
+                        <th style="border-bottom:0px !important">#</th> 
+                        <th style="border-bottom:0px !important">Tên Gọi</th> 
+                        <th style="border-bottom:0px !important">Nội Dung</th> 
+                        <th style="border-bottom:0px !important">Ngày Đăng</th> 
+                        <th style="border-bottom:0px !important">Tình Trạng</th> 
+                          <th style="border-bottom:0px !important"></th> 
+                    </tr> </thead> 
+                <tbody> 
+                <f:for each="{nhomtho.mautin}" as="mautin"  iteration="iterator123" >
+                    <tr > 
+                        <td>{iterator123.cycle}</td>
+                        <td>{mautin.title}</td> 
+                        <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td> 
+                        <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td> 
+                        <td>hiển thị</td> 
+                         <td>
+                         
+                             <f:link.action pluginName="Admin" controller="Mautin" action="edit" arguments="{mautin: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+         </td> 
+                    </tr> 
+                </f:for>
+   
+                </tbody> 
+            </table>
+
+        </div> 
+    </div>
+    <div class="row">   
+        <div class="col-md-12">
+            <f:if condition="{somautin}<3">
+               <f:link.action class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" action="editmautin" arguments="{nhomtho: nhomtho}">Tạo Mẩu Tin Mới</f:link.action>
+            </f:if>
+            <f:comment>
+             <f:link.action pluginName="Admin" controller="Mautin" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 20px;padding: 6px 30px;">Tạo Mẩu Tin Mới</f:link.action>
+            </f:comment>
+        </div>     
+    </div>
+
+    <br>   
+
+    <f:comment>
+        <f:flashMessages renderMode="div" />
+        <f:render partial="FrontendUser/Properties" arguments="{frontendUser:frontendUser}" />
+        <f:link.action action="list">Back to list</f:link.action><br />
+        <f:link.action action="new">New FrontendUser</f:link.action>
+    </f:comment>
+</f:section>

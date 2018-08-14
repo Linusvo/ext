@@ -1,0 +1,172 @@
+ 
+<!-- Small button group -->
+<f:if condition="{feright}==3">
+    <div class="form-group">
+        <label for="">Không Hiển Thị (Chế Độ Ẩn Tin Nhắn)</label>
+        <f:form.checkbox property="hidden1" value="1" class="form-control" style="width:3%; margin-top:0px "/>
+    </div>
+</f:if>
+<div class="form-group" id="selecttinhthanhpho">
+    <label for="">Tĩnh/Thành Phố</label>
+    <f:form.select property="tinhthanhpho" multiple="multiple" options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" style="width:50%"/>
+</div>
+<div class="form-group" >
+
+    <label for="">Quận/Huyện</label>
+    <div id="ajaxform">
+        <f:form.select property="quanhuyen"  multiple="multiple"  options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control" style="width:50%"/>
+    </div>
+
+</div>
+<div class="form-group">
+    <label for="">Phường/Xã</label>
+    <f:form.textfield name="phuongxaten" class="form-control" style="width:50%"/>
+</div>
+
+<div class="form-group" id="selectchuyennganh">
+    <label for="">Nhóm Ngành</label> 
+    <f:comment>
+        <f:form.select property="kategorienghanh"  options="{kategorienganhs}" multiple="multiple"  optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+    </f:comment>
+    <f:form.select property="kategorienganh"   options="{kategorienganhs}" multiple="multiple"  name="kategorienghanh" optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+</div>
+<div class="form-group">
+    <label for="">Chuyên Ngành</label>
+    <div id="chuyennganh">
+        <f:form.select property="unterkategorienganh"   options="{unterkategorienganhs}" multiple="multiple"  name="unterkategorienganhs" optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="">Tiêu Đề Mẩu Tin</label>
+    <f:form.textfield  type="text" property="title" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="">Nội Dung Mẩu Tin</label>
+    <f:form.textarea property="noidung" cols="20" rows="5" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Tên Công Ty / Nhóm Thợ / Cá Nhân</label>
+    <f:form.textfield  type="text" property="tennhomtho" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="">Miêu tả công ty</label>
+    <f:form.textarea property="mieutacty" cols="20" rows="5" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Địa Chỉ</label>
+    <f:form.textfield  property="diachi"  class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Điện Thoại</label>
+    <f:form.textfield property="phone" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Email Liên Hệ</label>
+    <f:form.textfield property="email" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Fax</label>
+    <f:form.textfield property="fax" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Trang Web</label>
+    <f:form.textfield property="www" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Thông Tin Liên Hệ Khác</label>
+    <f:form.textfield property="lienhe" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Bắt Đầu</label>
+    <f:form.textfield property="batdauvalue" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Kết Thúc</label>
+    <f:form.textfield property="ketthucvalue" class="form-control"/>
+</div>
+
+<f:comment>
+   
+<div class="form-group">
+    <f:form.hidden  property="adminstrator" value="{nhomtho}"  class="form-control"/>
+</div>
+<div class="form-group">
+      <label for="">Nhóm thợ: {tintimviec.adminstrator.uid}</label>
+  </div>
+   
+
+ </f:comment>
+
+ <f:if condition="{newfunktion}">
+    <div class="form-group">
+        <f:form.hidden  property="adminstrator" value="{nhomtho}"  class="form-control"/>
+    </div>
+</f:if>
+<f:comment>
+    <label for="title">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.title" />
+    </label><br />
+    <f:form.textfield property="title" /><br />
+    <label for="noidung">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.noidung" />
+    </label><br />
+    <f:form.textarea property="noidung" cols="40" rows="15" /><br />
+    <label for="hinhanh">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.hinhanh" />
+    </label><br />
+    <span>File upload is not implemented!</span><br  /><br />
+    <label for="tailieu">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.tailieu" />
+    </label><br />
+    <span>File upload is not implemented!</span><br /><br />
+    <label for="tennhomtho">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.tennhomtho" />
+    </label><br />
+    <f:form.textfield property="tennhomtho" /><br />
+    <label for="mieutacty">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.mieutacty" />
+    </label><br />
+    <f:form.textarea property="mieutacty" cols="40" rows="15" /><br />
+    <label for="diachi">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.diachi" />
+    </label><br />
+    <f:form.textfield property="diachi" /><br />
+    <label for="email">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.email" />
+    </label><br />
+    <f:form.textfield property="email" /><br />
+    <label for="phone">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.phone" />
+    </label><br />
+    <f:form.textfield property="phone" /><br />
+    <label for="fax">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.fax" />
+    </label><br />
+    <f:form.textfield property="fax" /><br />
+    <label for="www">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.www" />
+    </label><br />
+    <f:form.textfield property="www" /><br />
+    <label for="lienhe">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.lienhe" />
+    </label><br />
+    <f:form.textfield property="lienhe" /><br />
+    <label for="batdau">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.batdau" />
+    </label><br />
+    <f:form.textfield property="batdau"  value="{thotimviec.batdau->f:format.date()}" /><br />
+    <label for="ketthuc">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.ketthuc" />
+    </label><br />
+    <f:form.textfield property="ketthuc"  value="{thotimviec.ketthuc->f:format.date()}" /><br />
+    <label for="batdauvalue">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.batdauvalue" />
+    </label><br />
+    <f:form.textfield property="batdauvalue" /><br />
+    <label for="ketthucvalue">
+        <f:translate key="tx_thosuachua_domain_model_thotimviec.ketthucvalue" />
+    </label><br />
+    <f:form.textfield property="ketthucvalue" /><br />
+</f:comment>

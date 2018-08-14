@@ -1,0 +1,1268 @@
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <style>
+        table.dataTable th{
+            font-weight: normal !important;
+        }
+        hr {
+            margin-top: 1px !important;
+            margin-bottom: 1px !important;
+        }
+        #example_length label{
+           display: none;
+        }
+        #example_info{
+             display: none;
+         }
+        #example_filters{
+            display: none;
+        }
+
+        #tintimtho_length label{
+            display: none;
+        }
+        #tintimtho_info{
+            display: none;
+        }
+        #tintimtho_filter{
+            display: none;
+        }
+        table.dataTable thead th, table.dataTable thead td{
+            border-bottom: 1px solid #e4e4e4;
+        }
+        table.dataTable.no-footer {
+            border-bottom: 1px solid #ece7e7;
+        }
+        #example_previous{
+            display: none;
+        }
+        #example_next{
+            display: none;
+        }
+        #example_paginate span{
+            margin-right: 10px;
+        }
+        #example_paginate{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+
+
+    <br><br>
+    <f:if condition="{dakichhoatmautin}">
+    <div data-example-id="table-within-panel" class="bs-example">
+            <div class="panel-heading"  style="background: #DB0050!important; height:80px ; color:#fff;padding:28px 10px 0 17px">
+                <b style="font-size:15px; color: #fff">Mẩu tin của quí vị đã được khởi tạo thành công và được hiện thị tại mục Trang Chủ, tránh trường hợp tin đăng bị lỗi, quí vị nên kiểm tra lại mẩu tin một lần nữa.</b>
+            </div>
+
+            <br>
+    </div>
+    </f:if>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="main-container">
+                    <ul style="list-style: none;padding:0!important; margin: 0 !important;">
+                        <li style="border-bottom: solid 1px #c0c0c0; background-color: #088A08;padding: 12px "><a  style="color:#fff; font-weight:bold;font-size: 19px;" href="/admin?quantri=1"> TÀI KHOẢN</a></li>
+                        <li style="border-bottom: solid 1px #c0c0c0; background-color: #F2F2F2;padding: 10px "><a  style="color:#DB0050; font-weight:bold;" href="/admin?quantri=1"> Quản Trị Tài Khoản</a></li>
+                        <li style="border-bottom: solid 1px #c0c0c0; background-color: #F2F2F2;padding: 10px "><a  style="color:#DB0050; font-weight:bold;" href="/admin?quantri=2"> Đăng Tin Tìm Thợ</a></li>
+                        <li style="border-bottom: solid 1px #c0c0c0; background-color: #F2F2F2;padding: 10px "><a  style="color:#DB0050; font-weight:bold;" href="/admin?quantri=3"> Thợ/Nhóm Thợ Đăng Quảng Cáo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="main-container">
+                    <f:if condition="{quantri}== '' ">
+
+                        <div data-example-id="table-within-panel" class="bs-example">
+                            <div class="panel panel-default" style="">
+                                <div class="panel-heading"  style="background: #088A08 !important;color:#fff"><b style="font-size:19px; color:#fff">Thông Tin Tài Khoản</b> <b style="float: right"><f:cObject typoscriptObjectPath="lib.loginContent" /></b> </div>
+                                <div class="panel-body">
+                                    <f:if condition="{nhomtho.email}==''">
+                                            <b style="color: #DE0303;">
+                                                Quí vị hãy hoàn thiện thông tin tài khoản trước khi đăng bài.
+                                            </b>
+                                    </f:if>
+
+                                </div>
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td  style="color: #3374AD; ">
+                                            <f:image src="typo3conf/ext/thosuachua/Resources/Public/Icons/images.png"  width="160c" />
+
+                                        </td>
+                                        <td style="color: #000; ">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td   style="color: #3374AD; width: 20% "><b>Tên tài khoản:</b></td>
+                                        <td style="color: #3374AD; ">{nhomtho.username}</td>
+                                    </tr>
+                                    <tr>
+                                        <td   style="color: #3374AD; width: 20% "><b>Họ tên:</b></td>
+                                        <td style="color: #3374AD; ">{nhomtho.firstName} {nhomtho.lastName}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td   style="color: #3374AD; "><b>E-mail:</b></td>
+                                        <td style="color: #3374AD; ">{nhomtho.email} </td>
+                                    </tr>
+                                    <tr>
+                                        <td   style="color: #3374AD; "><b>Số điện thoại:</b></td>
+                                        <td style="color: #3374AD; ">{nhomtho.telephone} </td>
+                                    </tr>
+                                    <tr>
+                                        <td   style="color: #3374AD; width: 20% "><b>Địa chỉ:</b></td>
+                                        <td style="color: #3374AD; ">{nhomtho.address}</td>
+                                    </tr>
+                                    <tr>
+                                        <td   style="color: #3374AD; "><b>Trang web:</b></td>
+                                        <td style="color: #3374AD; ">{nhomtho.www} </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a class="pull-right btn btn-primary" style="font-weight: bold;font-size: 20px;background:#FBE202;color:#000;text-shadow:none !important;box-shadow: none !important;"  href="admin/thay-doi">Thay Đổi Thông Tin Tài Khoản</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </f:if>
+                    <f:if condition="{quantri}==1">
+
+                        <div data-example-id="table-within-panel" class="bs-example">
+                            <div class="panel panel-default" style="">
+                                <div class="panel-heading"  style="background: #088A08 !important;color:#fff"><b style="font-size:19px; color:#fff">Thông Tin Tài Khoản</b> <b style="float: right"><f:cObject typoscriptObjectPath="lib.loginContent" /></b> </div>
+                                    <div class="panel-body">
+                                        <f:if condition="{nhomtho.email}==''">
+                                            <b style="color: #DE0303;">
+                                                Quí vị hãy hoàn thiện thông tin tài khoản trước khi đăng bài.
+                                            </b>
+                                        </f:if>
+
+                                    </div>
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <td  style="color: #3374AD; ">
+                                                <f:image src="typo3conf/ext/thosuachua/Resources/Public/Icons/images.png"  width="160c" />
+
+                                            </td>
+                                            <td style="color: #000; ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td   style="color: #3374AD; width: 20% "><b>Tên tài khoản:</b></td>
+                                            <td style="color: #3374AD; ">{nhomtho.username}</td>
+                                        </tr>
+                                        <tr>
+                                            <td   style="color: #3374AD; width: 20% "><b>Họ tên:</b></td>
+                                            <td style="color: #3374AD; ">{nhomtho.firstName} {nhomtho.lastName}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td   style="color: #3374AD; "><b>E-mail:</b></td>
+                                            <td style="color: #3374AD; ">{nhomtho.email} </td>
+                                        </tr>
+                                        <tr>
+                                            <td   style="color: #3374AD; "><b>Số điện thoại:</b></td>
+                                            <td style="color: #3374AD; ">{nhomtho.telephone} </td>
+                                        </tr>
+                                        <tr>
+                                            <td   style="color: #3374AD; width: 20% "><b>Địa chỉ:</b></td>
+                                            <td style="color: #3374AD; ">{nhomtho.address}</td>
+                                        </tr>
+                                        <tr>
+                                            <td   style="color: #3374AD; "><b>Trang web:</b></td>
+                                            <td style="color: #3374AD; ">{nhomtho.www} </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a class="pull-right btn btn-primary" style="font-weight: bold;font-size: 20px;background:#FBE202;color:#000;text-shadow:none !important;box-shadow: none !important;"  href="admin/thay-doi">Thay Đổi Thông Tin Tài Khoản</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </f:if>
+                    <f:if condition="{quantri}==2">
+
+                        <div data-example-id="table-within-panel" class="bs-example">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="background: #088A08 !important;color:#fff"><h4 style="margin: 5px">Quản Trị Tin Tìm Thợ</h4></div>
+                                <div class="panel-body">
+                                    <f:if condition="{nhomtho.viectimtho -> f:count()}==0">
+                                         <p style="color:#E05500">Chưa có mẩu tin nào được đăng. Để đăng tin quí vị ấn vào link <f:link.action  pluginName="Admin" controller="Viectimtho" action="new" arguments="{nhomtho: nhomtho}"  style="font-weight: bold;font-size: 16px;" >Tạo Mẩu Tin Mới</f:link.action> này</p>
+                                    </f:if>
+                                </div>
+                                <hr style="border-color: #000">
+
+                                        <table id="tintimtho" class="display" width="100%" cellspacing="0">
+                                            <thead>
+                                            <tr>
+                                                <th>Thứ Tự</th>
+                                                <th>Tiêu Đề</th>
+                                                <th>Nội Dung</th>
+                                                <th>Ngày Đăng</th>
+                                                <th>Tình Trạng</th>
+                                                <th>Thay Đổi</th>
+                                                <th>Xóa</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <f:for each="{nhomtho.viectimtho}" as="mautin"  iteration="iterator123" >
+                                                <tr >
+                                                    <td>{iterator123.cycle}</td>
+                                                    <td>{mautin.title}</td>
+                                                    <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                                    <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                                    <td>
+                                                        <f:if condition="{mautin.hidden1}==0">
+                                                            <f:then>
+                                                                đăng
+                                                            </f:then>
+                                                            <f:else>
+                                                                đợi kiểm tra
+                                                            </f:else>
+                                                        </f:if>
+                                                    </td>
+                                                    <td>
+
+                                                        <f:link.action pluginName="Admin" controller="Viectimtho" action="edit" arguments="{viectimtho: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                                    </td>
+                                                    <td>
+                                                        <f:link.action pluginName="Admin" controller="Viectimtho" action="xoatin" arguments="{viectimtho: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                                    </td>
+                                                </tr>
+                                            </f:for>
+                                            <f:if condition="{nhomtho.viectimtho -> f:count()}==0">
+                                                <tr >
+                                                    <td rowspan="7" colspan="7" style="text-align: center">
+                                                        <br>
+                                                        <p style="color:#E05500">Chưa có mẩu tin nào được đăng.</p></td>
+                                                </tr>
+                                            </f:if>
+                                            </tbody>
+                                        </table>
+                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <f:link.action  pluginName="Admin" controller="Viectimtho" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;background:#FBE202;color:#000;text-shadow:none !important;box-shadow: none !important;">Tạo Mẩu Tin Mới</f:link.action>
+                                        </div>
+                                    </div>
+                        </div>
+                        <br><br>
+                    </f:if>
+                    <f:if condition="{quantri}==3">
+                        <div data-example-id="table-within-panel" class="bs-example">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="background: #088A08 !important;color:#fff"><h4 style="margin: 5px">Thợ/Nhóm Thợ Đăng Tin Tiếp Thị</h4></div>
+                                <div class="panel-body">
+                                    <f:if condition="{nhomtho.thotimviec -> f:count()}==0">
+                                        <p style="color:#E05500">Chưa có mẩu tin nào được đăng. Để đăng tin quí vị ấn vào link <f:link.action  pluginName="Admin" controller="Thotimviec" action="new" arguments="{nhomtho: nhomtho}"  style="font-weight: bold;font-size: 16px;" >Tạo Mẩu Tin Mới</f:link.action> này</p>
+                                    </f:if>
+                                </div>
+                                <hr style="border-color: #000">
+                                        <table id="example" class="display" width="100%" cellspacing="0">
+                                            <thead>
+                                            <tr>
+                                                <th>Thứ Tự</th>
+                                                <th>Tiêu Đề</th>
+                                                <th>Nội Dung</th>
+                                                <th>Ngày Đăng</th>
+                                                <th>Tình Trạng</th>
+                                                <th>Thay Đổi</th>
+                                                <th>Xóa</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <f:for each="{nhomtho.thotimviec}" as="mautin"  iteration="iterator123" >
+                                                <tr>
+                                                    <td>{iterator123.cycle}</td>
+                                                    <td>{mautin.title}</td>
+                                                    <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                                    <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                                    <td>
+                                                        <f:if condition="{mautin.hidden1}==0">
+                                                            <f:then>
+                                                                đăng
+                                                            </f:then>
+                                                            <f:else>
+                                                                đợi kiểm tra
+                                                            </f:else>
+                                                        </f:if>
+                                                    </td>
+                                                    <td>
+                                                        <f:link.action pluginName="Admin" controller="Thotimviec" action="edit" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Thay Đổi</f:link.action>
+                                                    </td>
+                                                    <td>
+                                                        <f:link.action pluginName="Admin" controller="Thotimviec" action="xoatin" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                                    </td>
+                                                </tr>
+                                            </f:for>
+                                            <f:if condition="{nhomtho.thotimviec -> f:count()}==0">
+                                                <tr >
+                                                    <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                                </tr>
+                                            </f:if>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <f:link.action  pluginName="Admin" controller="Thotimviec" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;background:#FBE202;color:#000;text-shadow:none !important;box-shadow: none !important;">Tạo Mẩu Tin Mới</f:link.action>
+                                </div>
+                            </div>
+                        </div>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<f:comment>
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default" style="">
+            <div class="panel-heading"  style="background: #088A08 !important;color:#fff"><b style="font-size:25px; color:#fff">Thông Tin Tài Khoản</b> <b style="float: right"><f:cObject typoscriptObjectPath="lib.loginContent" /></b> </div>
+            <div class="panel-body">
+
+
+                <f:if condition="{nhomtho.status}==99">
+                    <f:else>
+                        <p style="color: #3374AD;">
+                            Để hệ thống có đủ thông tin hiện thị, quí vị nên điền đầy đủ thông tin bằng cách lựa chọn "Thay Đổi Thông Tin Tài Khoản".<br> Trường hợp
+                            quí vị đăng nhập bằng facebook. Sau lần đăng nhập đầu tiên, nếu quí vị muốn các lần tiếp theo không cần đăng nhập qua facebook, mà
+                            dùng tài khoản của hệ thống thì quí vị vào mục thay đổi thông tin để tạo mật khẩu cho tài khoản. Sau đó quí vị có thể dùng "Tên Tài Khoản"
+                            mật khẩu tương ứng để đăng nhập mà không cần thông qua facebook. Còn không, quí vị vẫn có thể đăng nhập qua facebook bình thường, tài khoản
+                            tương ứng vẫn không hề thay đổi.
+                        </p>
+                    </f:else>
+                </f:if>
+                <f:if condition="{nhomtho.status}==99">
+                    <p style="color: red;">
+                        Do quí vị đăng nhập bằng tài khoản Facebook, nên để có thể đăng tin quí vị phải lựa chọn "Thay Đổi Thông Tin Tài Khoản" để chọn "Mục đích quản trị". Sau đó
+                        hệ thống sẽ hiện thị mẩu form tương ứng với mục đích đăng tin của quí vị.
+                    </p>
+                </f:if>
+            </div>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td   style=" width: 50% "><b>Tên tài khoản</b></td>
+                    <td style=" ">{nhomtho.lastName} {nhomtho.firstName}</td>
+                </tr>
+                <tr>
+                    <td   style="color: #3374AD; width: 20% "><b>Tên tài khoản</b></td>
+                    <td style="color: #3374AD; ">{nhomtho.username}</td>
+                </tr>
+                <tr>
+                    <td   style="color: #3374AD; ">E-mail</td>
+                    <td style="color: #3374AD; ">{nhomtho.email} </td>
+                </tr>
+                <tr>
+                    <td   style="color: #3374AD; ">Newsletter ( Nhận tin mới từ hệ thống)</td>
+                    <td style="color: #3374AD; ">Có </td>
+                </tr>
+                <tr>
+                    <td  style="color: #3374AD; ">Hình ảnh</td>
+                    <td style="color: #000; ">
+                        <f:image src="fileadmin/dummy1.jpg" alt="alt text" width="160c" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a class="pull-right btn btn-primary" style="font-weight: bold;font-size: 20px;"  href="admin/thay-doi">Thay Đổi Thông Tin Tài Khoản</a>
+            </div>
+        </div>
+    </div>
+
+
+    <f:if condition="{feright1}">
+        <f:then>
+
+            <br>
+            <br>
+            <div data-example-id="table-within-panel" class="bs-example">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" style="background: #088A08 !important;color:#fff"><h3 style="margin: 5px">Thợ/Nhóm Thợ Đăng Tin Tiếp Thị</h3></div>
+                    <div class="panel-body">
+
+                        <p>
+                            Tại đây quí vị có thể tạo mẩu tin mới.Để tạo mẩu tin mới thành công quí vị phải điền đầy một số mục
+                            bắt buộc, như mục đích, nội dụng, địa điểm.  <br>
+                            Hiện tại quí vị được đăng tối đa 2 mẩu tin. Mỗi mẩu tin được tải lên tối đa một hình ảnh và hình ảnh không
+                            quá 200kB.<br>
+                            Mẩu tin của quí ví chỉ được kích hoạt một tháng, sau đó sẽ tự động ẩn. Nếu quí vị muốn mẩu tin tiếp
+                            tuc hiển thị, quí vị đơn giản ấn vào nút kích hoạt, sau đó mẩu tin được kích hoạt tiếp một tháng.
+                            Trường hợp mẩu tin đăng hiển thị, nếu quí vị muốn tắt hiển thị, quí vị đơn giản ấn vào nút ẩn bên cạch mẩu tin. <br>
+                            Nếu quí vị gặp khó khăn trong bất kỳ khâu nào, chúng tôi sẵn sàng tư vấn cho quí vị.
+                            Quí vị có thể liên với chúng tôi qua emai hoặc điện thoại, báo cho chúng tôi biết nội dung yêu cầu và
+                            địa chỉ email mà quí vị dùng cho việc đăng nhập hệ thống của chúng tôi.
+
+                        </p>
+                        <p style="color:red; font-weight: bold">Sau khi quí vị khởi tạo xong mẩu tin, trong vòng 1 đến 2 tiếng hệ thống sẽ kiểm tra lại, nếu
+                            hợp lệ, mẩu tin sẽ được đăng.
+                        </p>
+                    </div>
+                    <hr style="border-color: #000">
+                    <f:comment>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="border-bottom:0px !important">#</th>
+                                <th style="border-bottom:0px !important">Tên Gọi</th>
+                                <th style="border-bottom:0px !important">Nội Dung</th>
+                                <th style="border-bottom:0px !important">Ngày Đăng</th>
+                                <th style="border-bottom:0px !important">Tình Trạng</th>
+                                <th style="border-bottom:0px !important"></th>
+                            </tr> </thead>
+                            <tbody>
+
+                            <f:for each="{nhomtho.thotimviec}" as="mautin"  iteration="iterator123" >
+                                <tr >
+                                    <td>{iterator123.cycle}</td>
+                                    <td>{mautin.title}</td>
+                                    <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                    <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                    <td>hiển thị</td>
+                                    <td>
+                                        <f:link.action pluginName="Admin" controller="Thotimviec" action="edit" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Thay Đổi</f:link.action>
+                                    </td>
+                                    <td>
+                                        <f:link.action pluginName="Admin" controller="Thotimviec" action="xoatin" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                    </td>
+                                </tr>
+                            </f:for>
+
+                            </tbody>
+                        </table>
+                    </f:comment>
+                    <f:if condition="{nhomtho.feright}==3">
+                        <f:then>
+                            <table id="example" class="display" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Thứ Tự</th>
+                                    <th>Tiêu Đề</th>
+                                    <th>Nội Dung</th>
+                                    <th>Ngày Đăng</th>
+                                    <th>Tình Trạng</th>
+                                    <th>Thay Đổi</th>
+                                    <th>Xóa</th>
+                                </tr>
+                                </thead>
+                                <tbody
+                                <f:for each="{nhomtho.thotimviec}" as="mautin"  iteration="iterator123" >
+                                    <tr>
+                                        <td>{iterator123.cycle}</td>
+                                        <td>{mautin.title}</td>
+                                        <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                        <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                        <td>
+                                            <f:if condition="{mautin.hidden1}==0">
+                                                <f:then>
+                                                    đăng
+                                                </f:then>
+                                                <f:else>
+                                                    đợi kiểm tra
+                                                </f:else>
+                                            </f:if>
+                                        </td>
+                                        <td>
+                                            <f:link.action pluginName="Admin" controller="Thotimviec" action="edit" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Thay Đổi</f:link.action>
+                                        </td>
+                                        <td>
+                                            <f:link.action pluginName="Admin" controller="Thotimviec" action="xoatin" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                        </td>
+                                    </tr>
+                                </f:for>
+                                <f:if condition="{nhomtho.thotimviec -> f:count()}==0">
+                                    <tr >
+                                        <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                    </tr>
+                                </f:if>
+                                </tbody>
+                            </table>
+                        </f:then>
+                        <f:else>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th style="border-bottom:0px !important">#</th>
+                                    <th style="border-bottom:0px !important">Tên Gọi</th>
+                                    <th style="border-bottom:0px !important">Nội Dung</th>
+                                    <th style="border-bottom:0px !important">Ngày Đăng</th>
+                                    <th style="border-bottom:0px !important">Tình Trạng</th>
+                                    <th style="border-bottom:0px !important"></th>
+                                </tr> </thead>
+                                <tbody>
+
+                                <f:for each="{nhomtho.thotimviec}" as="mautin"  iteration="iterator123" >
+                                    <f:if condition="{iterator123.index}<2">
+                                        <tr >
+                                            <td>{iterator123.cycle}</td>
+                                            <td>{mautin.title}</td>
+                                            <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                            <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                            <td>
+                                                <f:if condition="{mautin.hidden1}==0">
+                                                    <f:then>
+                                                        đăng
+                                                    </f:then>
+                                                    <f:else>
+                                                        đợi kiểm tra
+                                                    </f:else>
+                                                </f:if>
+                                            </td>
+                                            <td>
+                                                <f:link.action pluginName="Admin" controller="Thotimviec" action="edit" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Thay Đổi</f:link.action>
+                                            </td>
+                                            <td>
+                                                <f:link.action pluginName="Admin" controller="Thotimviec" action="xoatin" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                </f:for>
+                                <f:if condition="{nhomtho.thotimviec -> f:count()}==0">
+                                    <tr >
+                                        <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                    </tr>
+                                </f:if>
+
+                                </tbody>
+                            </table>
+
+                        </f:else>
+                    </f:if>
+
+                </div>
+
+                <f:if condition="{nhomtho.feright}==3">
+                    <f:then>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <f:link.action  pluginName="Admin" controller="Thotimviec" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" >Tạo Mẩu Tin Mới</f:link.action>
+                            </div>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{nhomtho.thotimviec -> f:count()}<2">
+                            <f:then>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <f:link.action  pluginName="Admin" controller="Thotimviec" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" >Tạo Mẩu Tin Mới</f:link.action>
+                                    </div>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p style="color:red">Quí vị được miển phí đăng tối đa 2 tin nhắn. Nếu quí vị muốn đăng mới, quí vị nên xoa tin nhắn củ hoặc hoặc yêu cầu hệ thống nâng cấp chế độ tài khoản.</p>
+                                    </div>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+            <br><br>
+
+
+            <div data-example-id="table-within-panel" class="bs-example">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" style="background: #088A08 !important;color:#fff"><h3 style="margin: 5px">Thợ Đăng Hồ Sơ Tìm Việc</h3></div>
+                    <div class="panel-body">
+
+                        <p>
+                            Tại đây quí vị có thể tạo mẩu tin mới.Để tạo mẩu tin mới thành công quí vị phải điền đầy một số mục
+                            bắt buộc, như mục đích, nội dụng, địa điểm.  <br>
+                            Hiện tại quí vị được đăng tối đa 3 mẩu tin. Mỗi mẩu tin được tải lên tối đa một hình ảnh và hình ảnh không
+                            quá 200kB.<br>
+                            Mẩu tin của quí ví chỉ được kích hoạt một tháng, sau đó sẽ tự động ẩn. Nếu quí vị muốn mẩu tin tiếp
+                            tuc hiển thị, quí vị đơn giản ấn vào nút kích hoạt, sau đó mẩu tin được kích hoạt tiếp một tháng.
+                            Trường hợp mẩu tin đăng hiển thị, nếu quí vị muốn tắt hiển thị, quí vị đơn giản ấn vào nút ẩn bên cạch mẩu tin. <br>
+                            Nếu quí vị gặp khó khăn trong bất kỳ khâu nào, chúng tôi sẵn sàng tư vấn cho quí vị.
+                            Quí vị có thể liên với chúng tôi qua emai hoặc điện thoại, báo cho chúng tôi biết nội dung yêu cầu và
+                            địa chỉ email mà quí vị dùng cho việc đăng nhập hệ thống của chúng tôi.
+
+                        </p>
+                        <p style="color:red; font-weight: bold">Sau khi quí vị khởi tạo xong mẩu tin, trong vòng 1 đến 2 tiếng hệ thống sẽ kiểm tra lại, nếu
+                            hợp lệ, mẩu tin sẽ được đăng.
+                        </p>
+                    </div>
+                    <hr style="border-color: #000">
+                    <f:if condition="{nhomtho.feright}==3">
+                        <f:then>
+                            <table id="tintuyendung" class="display" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Thứ Tự</th>
+                                    <th>Tiêu Đề</th>
+                                    <th>Nội Dung</th>
+                                    <th>Ngày Đăng</th>
+                                    <th>Tình Trạng</th>
+                                    <th>Thay Đổi</th>
+                                    <th>Xóa</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <f:for each="{nhomtho.tintimviec}" as="mautin"  iteration="iterator123" >
+                                    <tr >
+                                        <td>{iterator123.cycle}</td>
+                                        <td>{mautin.title}</td>
+                                        <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                        <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                        <td>
+                                            <f:if condition="{mautin.hidden1}==0">
+                                                <f:then>
+                                                    đăng
+                                                </f:then>
+                                                <f:else>
+                                                    đợi kiểm tra
+                                                </f:else>
+                                            </f:if>
+                                        </td>
+                                        <td>
+                                            <f:link.action pluginName="Admin" controller="Tintimviec" action="edit" arguments="{tintimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                        </td>
+                                        <td>
+                                            <f:link.action pluginName="Admin" controller="Tintimviec" action="xoatin" arguments="{tintimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                        </td>
+                                    </tr>
+                                </f:for>
+                                <f:if condition="{nhomtho.tintimviec -> f:count()}==0">
+                                    <tr >
+                                        <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                    </tr>
+                                </f:if>
+
+                                </tbody>
+                            </table>
+
+                        </f:then>
+                        <f:else>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th style="border-bottom:0px !important">#</th>
+                                    <th style="border-bottom:0px !important">Tên Gọi</th>
+                                    <th style="border-bottom:0px !important">Nội Dung</th>
+                                    <th style="border-bottom:0px !important">Ngày Đăng</th>
+                                    <th style="border-bottom:0px !important">Tình Trạng</th>
+                                    <th style="border-bottom:0px !important"></th>
+                                </tr> </thead>
+                                <tbody>
+
+                                <f:for each="{nhomtho.tintimviec}" as="mautin"  iteration="iterator123" >
+                                    <f:if condition="{iterator123.index}<2">
+                                        <tr >
+                                            <td>{iterator123.cycle}</td>
+                                            <td>{mautin.title}</td>
+                                            <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                            <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                            <td>
+                                                <f:if condition="{mautin.hidden1}==0">
+                                                    <f:then>
+                                                        đăng
+                                                    </f:then>
+                                                    <f:else>
+                                                        đợi kiểm tra
+                                                    </f:else>
+                                                </f:if>
+                                            </td>
+                                            <td>
+
+                                                <f:link.action pluginName="Admin" controller="Tintimviec" action="edit" arguments="{tintimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                            </td>
+                                            <td>
+                                                <f:link.action pluginName="Admin" controller="Tintimviec" action="xoatin" arguments="{tintimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                </f:for>
+                                <f:if condition="{nhomtho.tintimviec -> f:count()}==0">
+                                    <tr >
+                                        <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                    </tr>
+                                </f:if>
+
+                                </tbody>
+                            </table>
+
+                        </f:else>
+                    </f:if>
+
+                </div>
+
+                <f:if condition="{nhomtho.feright}==3">
+                    <f:then>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <f:link.action  pluginName="Admin" controller="Tintimviec" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" >Tạo Mẩu Tin Mới</f:link.action>
+                            </div>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{nhomtho.tintimviec -> f:count()}<2">
+                            <f:then>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <f:link.action  pluginName="Admin" controller="Tintimviec" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" >Tạo Mẩu Tin Mới</f:link.action>
+                                    </div>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p style="color:red">Quí vị được miển phí đăng tối đa 2 tin nhắn. Nếu quí vị muốn đăng mới, quí vị nên xoa tin nhắn củ hoặc hoặc yêu cầu hệ thống nâng cấp chế độ tài khoản.</p>
+                                    </div>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+        </f:then>
+
+    </f:if>
+    <f:if condition="{feright2}">
+        <br>
+        <br>
+        <div data-example-id="table-within-panel" class="bs-example">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #088A08 !important;color:#fff"><h3 style="margin: 5px">Tạo Mẩu Tin Tìm Thợ</h3></div>
+                <div class="panel-body">
+
+                    <p>
+                        Tại đây quí vị có thể tạo mẩu tin mới.Để tạo mẩu tin mới thành công quí vị phải điền đầy một số mục
+                        bắt buộc, như mục đích, nội dụng, địa điểm.  <br>
+                        Hiện tại quí vị được đăng tối đa 3 mẩu tin. Mỗi mẩu tin được tải lên tối đa một hình ảnh và hình ảnh không
+                        quá 200kB.<br>
+                        Mẩu tin của quí ví chỉ được kích hoạt một tháng, sau đó sẽ tự động ẩn. Nếu quí vị muốn mẩu tin tiếp
+                        tuc hiển thị, quí vị đơn giản ấn vào nút kích hoạt, sau đó mẩu tin được kích hoạt tiếp một tháng.
+                        Trường hợp mẩu tin đăng hiển thị, nếu quí vị muốn tắt hiển thị, quí vị đơn giản ấn vào nút ẩn bên cạch mẩu tin. <br>
+                        Nếu quí vị gặp khó khăn trong bất kỳ khâu nào, chúng tôi sẵn sàng tư vấn cho quí vị.
+                        Quí vị có thể liên với chúng tôi qua emai hoặc điện thoại, báo cho chúng tôi biết nội dung yêu cầu và
+                        địa chỉ email mà quí vị dùng cho việc đăng nhập hệ thống của chúng tôi.
+
+                    </p>
+                    <p style="color:red; font-weight: bold">Sau khi quí vị khởi tạo xong mẩu tin, trong vòng 1 đến 2 tiếng hệ thống sẽ kiểm tra lại, nếu
+                        hợp lệ, mẩu tin sẽ được đăng.
+                    </p>
+                </div>
+                <hr style="border-color: #000">
+                <f:if condition="{nhomtho.feright}==3">
+                    <f:then>
+                        <table id="tintimtho" class="display" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Thứ Tự</th>
+                                <th>Tiêu Đề</th>
+                                <th>Nội Dung</th>
+                                <th>Ngày Đăng</th>
+                                <th>Tình Trạng</th>
+                                <th>Thay Đổi</th>
+                                <th>Xóa</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <f:for each="{nhomtho.viectimtho}" as="mautin"  iteration="iterator123" >
+                                <tr >
+                                    <td>{iterator123.cycle}</td>
+                                    <td>{mautin.title}</td>
+                                    <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                    <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                    <td>
+                                        <f:if condition="{mautin.hidden1}==0">
+                                            <f:then>
+                                                đăng
+                                            </f:then>
+                                            <f:else>
+                                                đợi kiểm tra
+                                            </f:else>
+                                        </f:if>
+                                    </td>
+                                    <td>
+
+                                        <f:link.action pluginName="Admin" controller="Viectimtho" action="edit" arguments="{viectimtho: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                    </td>
+                                    <td>
+                                        <f:link.action pluginName="Admin" controller="Viectimtho" action="xoatin" arguments="{viectimtho: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                    </td>
+                                </tr>
+                            </f:for>
+                            <f:if condition="{nhomtho.viectimtho -> f:count()}==0">
+                                <tr >
+                                    <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                </tr>
+                            </f:if>
+                            </tbody>
+                        </table>
+                    </f:then>
+                    <f:else>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="border-bottom:0px !important">#</th>
+                                <th style="border-bottom:0px !important">Tên Gọi</th>
+                                <th style="border-bottom:0px !important">Nội Dung</th>
+                                <th style="border-bottom:0px !important">Ngày Đăng</th>
+                                <th style="border-bottom:0px !important">Tình Trạng</th>
+                                <th style="border-bottom:0px !important"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <f:for each="{nhomtho.viectimtho}" as="mautin"  iteration="iterator123" >
+                                <f:if condition="{iterator123.index}<2">
+                                    <tr >
+                                        <td>{iterator123.cycle}</td>
+                                        <td>{mautin.title}</td>
+                                        <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                        <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                        <td>
+                                            <f:if condition="{mautin.hidden1}==0">
+                                                <f:then>
+                                                    đăng
+                                                </f:then>
+                                                <f:else>
+                                                    đợi kiểm tra
+                                                </f:else>
+                                            </f:if>
+                                        </td>
+                                        <td>
+
+                                            <f:link.action pluginName="Admin" controller="Viectimtho" action="edit" arguments="{viectimtho: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                        </td>
+                                        <td>
+                                            <f:link.action pluginName="Admin" controller="Viectimtho" action="xoatin" arguments="{viectimtho: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                        </td>
+                                    </tr>
+                                </f:if>
+                            </f:for>
+                            <f:if condition="{nhomtho.viectimtho -> f:count()}==0">
+                                <tr >
+                                    <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                </tr>
+                            </f:if>
+                            </tbody>
+                        </table>
+
+                    </f:else>
+                </f:if>
+            </div>
+            <!------>
+            <f:if condition="{nhomtho.feright}==3">
+                <f:then>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <f:link.action  pluginName="Admin" controller="Viectimtho" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" >Tạo Mẩu Tin Mới</f:link.action>
+                        </div>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{nhomtho.viectimtho -> f:count()}<2">
+                        <f:then>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <f:link.action  pluginName="Admin" controller="Viectimtho" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" >Tạo Mẩu Tin Mới</f:link.action>
+                                </div>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p style="color:red">Quí vị được miển phí đăng tối đa 2 tin nhắn. Nếu quí vị muốn đăng mới, quí vị nên xoa tin nhắn củ hoặc hoặc yêu cầu hệ thống nâng cấp chế độ tài khoản.</p>
+                                </div>
+                            </div>
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+            <!----->
+
+        </div>
+
+        <br><br>
+        <div data-example-id="table-within-panel" class="bs-example">
+            <div class="panel panel-default">
+
+                <div class="panel-heading" style="background: #088A08 !important;color:#fff"><h3 style="margin: 5px">Tạo Mẩu Tin Tuyển Dụng</h3></div>
+                <div class="panel-body">
+
+                    <p>
+                        Tại đây quí vị có thể tạo mẩu tin mới.Để tạo mẩu tin mới thành công quí vị phải điền đầy một số mục
+                        bắt buộc, như mục đích, nội dụng, địa điểm.  <br>
+                        Hiện tại quí vị được đăng tối đa 3 mẩu tin. Mỗi mẩu tin được tải lên tối đa một hình ảnh và hình ảnh không
+                        quá 200kB.<br>
+                        Mẩu tin của quí ví chỉ được kích hoạt một tháng, sau đó sẽ tự động ẩn. Nếu quí vị muốn mẩu tin tiếp
+                        tuc hiển thị, quí vị đơn giản ấn vào nút kích hoạt, sau đó mẩu tin được kích hoạt tiếp một tháng.
+                        Trường hợp mẩu tin đăng hiển thị, nếu quí vị muốn tắt hiển thị, quí vị đơn giản ấn vào nút ẩn bên cạch mẩu tin. <br>
+                        Nếu quí vị gặp khó khăn trong bất kỳ khâu nào, chúng tôi sẵn sàng tư vấn cho quí vị.
+                        Quí vị có thể liên với chúng tôi qua emai hoặc điện thoại, báo cho chúng tôi biết nội dung yêu cầu và
+                        địa chỉ email mà quí vị dùng cho việc đăng nhập hệ thống của chúng tôi.
+
+                    </p>
+                    <p style="color:red; font-weight: bold">Sau khi quí vị khởi tạo xong mẩu tin, trong vòng 1 đến 2 tiếng hệ thống sẽ kiểm tra lại, nếu
+                        hợp lệ, mẩu tin sẽ được đăng.
+                    </p>
+                </div>
+                <hr style="border-color: #000">
+                <f:if condition="{nhomtho.feright}==3">
+                    <f:then>
+                        <table id="tinnhatuyendung" class="display" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Thứ Tự</th>
+                                <th>Tiêu Đề</th>
+                                <th>Nội Dung</th>
+                                <th>Ngày Đăng</th>
+                                <th>Tình Trạng</th>
+                                <th>Thay Đổi</th>
+                                <th>Xóa</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <f:for each="{nhomtho.tintuyendung}" as="mautin"  iteration="iterator123" >
+                                <tr >
+                                    <td>{iterator123.cycle}</td>
+                                    <td>{mautin.title}</td>
+                                    <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                    <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                    <td>
+                                        <f:if condition="{mautin.hidden1}==0">
+                                            <f:then>
+                                                đăng
+                                            </f:then>
+                                            <f:else>
+                                                đợi kiểm tra
+                                            </f:else>
+                                        </f:if>
+                                    </td>
+                                    <td>
+                                        <f:link.action pluginName="Admin" controller="Tintuyendung" action="edit" arguments="{tintuyendung: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                    </td>
+                                    <td>
+                                        <f:link.action pluginName="Admin" controller="Tintuyendung" action="xoatin" arguments="{tintuyendung: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                    </td>
+                                </tr>
+                            </f:for>
+                            <f:if condition="{nhomtho.tintuyendung -> f:count()}==0">
+                                <tr >
+                                    <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                </tr>
+                            </f:if>
+                            </tbody>
+                        </table>
+                    </f:then>
+                    <f:else>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="border-bottom:0px !important">#</th>
+                                <th style="border-bottom:0px !important">Tên Gọi</th>
+                                <th style="border-bottom:0px !important">Nội Dung</th>
+                                <th style="border-bottom:0px !important">Ngày Đăng</th>
+                                <th style="border-bottom:0px !important">Tình Trạng</th>
+                                <th style="border-bottom:0px !important"></th>
+                            </tr> </thead>
+                            <tbody>
+
+                            <f:for each="{nhomtho.tintuyendung}" as="mautin"  iteration="iterator123" >
+                                <f:if condition="{iterator123.index}<2">
+                                    <tr >
+                                        <td>{iterator123.cycle}</td>
+                                        <td>{mautin.title}</td>
+                                        <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                        <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                        <td>
+                                            <f:if condition="{mautin.hidden1}==0">
+                                                <f:then>
+                                                    đăng
+                                                </f:then>
+                                                <f:else>
+                                                    đợi kiểm tra
+                                                </f:else>
+                                            </f:if>
+                                        </td>
+                                        <td>
+
+                                            <f:link.action pluginName="Admin" controller="Tintuyendung" action="edit" arguments="{tintuyendung: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                        </td>
+                                        <td>
+                                            <f:link.action pluginName="Admin" controller="Tintuyendung" action="xoatin" arguments="{tintuyendung: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                        </td>
+                                    </tr>
+                                </f:if>
+                            </f:for>
+                            <f:if condition="{nhomtho.tintuyendung -> f:count()}==0">
+                                <tr >
+                                    <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào được đăng.</h4></td>
+                                </tr>
+                            </f:if>
+
+                            </tbody>
+                        </table>
+
+                    </f:else>
+                </f:if>
+
+
+            </div>
+
+            <!------>
+            <f:if condition="{nhomtho.feright}==3">
+                <f:then>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <f:link.action  pluginName="Admin" controller="Tintuyendung" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" >Tạo Mẩu Tin Mới</f:link.action>
+                        </div>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{nhomtho.tintuyendung -> f:count()}<2">
+                        <f:then>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <f:link.action  pluginName="Admin" controller="Tintuyendung" action="new" arguments="{nhomtho: nhomtho}" class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" >Tạo Mẩu Tin Mới</f:link.action>
+                                </div>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p style="color:red">Quí vị được miển phí đăng tối đa 2 tin nhắn. Nếu quí vị muốn đăng mới, quí vị nên xoa tin nhắn củ hoặc hoặc yêu cầu hệ thống nâng cấp chế độ tài khoản.</p>
+                                </div>
+                            </div>
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+            <!----->
+
+
+        </div>
+    </f:if>
+
+    <br><br>
+
+    <!-- kich hoat tin nhan -->
+    <f:if condition="{nhomtho.feright}==3">
+        <f:then>
+
+            <div data-example-id="table-within-panel" class="bs-example">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" style="background: #D41045 !important;color:#fff"><h3 style="margin: 5px">Kích Hoạt Mẩu Tin</h3></div>
+                    <div class="panel-body">
+
+                        <p>
+                            Các mẩu tin tại đây đang đợi superadmin kích hoạt hiển thị. Trước khi kích hoạt superadmin kiểm tra, liệu nội dung
+                            có phù hợp để kích hoạt hay không, nếu không sẽ xóa mẩu tin khỏi hệ thống.
+
+                        </p>
+                    </div>
+                    <h2 style="color: #D41045; border-bottom: 1px solid #000">Kích hoạt thợ tìm việc</h2>
+                    <table id="kichhoat" class="display" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Thứ Tự</th>
+                            <th>Tiêu Đề</th>
+                            <th>Nội Dung</th>
+                            <th>Ngày Đăng</th>
+                            <th>Tình Trạng</th>
+                            <th>Thay Đổi</th>
+                            <th>Xóa</th>
+                        </tr>
+                        </thead>
+                        <tbody
+                        <f:for each="{kichhoatthotimviec}" as="mautin"  iteration="iterator123" >
+                            <tr>
+                                <td>{iterator123.cycle}</td>
+                                <td>{mautin.title}</td>
+                                <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                <td>đợi kiểm tra</td>
+                                <td>
+                                    <f:link.action pluginName="Admin" controller="Thotimviec" action="edit" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Thay Đổi</f:link.action>
+                                </td>
+                                <td>
+                                    <f:link.action pluginName="Admin" controller="Thotimviec" action="xoatin" arguments="{thotimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                </td>
+                            </tr>
+                        </f:for>
+                        <f:if condition="{kichhoatthotimviec -> f:count()}==0">
+                            <tr >
+                                <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào cần kích hoạt.</h4></td>
+                            </tr>
+                        </f:if>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h2 style="color: #D41045; border-bottom: 1px solid #000">Kích hoạt việc tìm thợ</h2>
+                    <table id="kichhoat1" class="display" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Thứ Tự</th>
+                            <th>Tiêu Đề</th>
+                            <th>Nội Dung</th>
+                            <th>Ngày Đăng</th>
+                            <th>Tình Trạng</th>
+                            <th>Thay Đổi</th>
+                            <th>Xóa</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <f:for each="{kichhoatviectimtho}" as="mautin"  iteration="iterator123" >
+                            <tr >
+                                <td>{iterator123.cycle}</td>
+                                <td>{mautin.title}</td>
+                                <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                <td>đợi kiểm tra</td>
+                                <td>
+
+                                    <f:link.action pluginName="Admin" controller="Viectimtho" action="edit" arguments="{viectimtho: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                </td>
+                                <td>
+                                    <f:link.action pluginName="Admin" controller="Viectimtho" action="xoatin" arguments="{viectimtho: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                </td>
+                            </tr>
+                        </f:for>
+                        <f:if condition="{kichhoatviectimtho -> f:count()}==0">
+                            <tr >
+                                <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào cần kích hoạt.</h4></td>
+                            </tr>
+                        </f:if>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h2 style="color: #D41045; border-bottom: 1px solid #000">Kích hoạt mẩu tin thợ tìm việc</h2>
+                    <table id="kichhoat3" class="display" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Thứ Tự</th>
+                            <th>Tiêu Đề</th>
+                            <th>Nội Dung</th>
+                            <th>Ngày Đăng</th>
+                            <th>Tình Trạng</th>
+                            <th>Thay Đổi</th>
+                            <th>Xóa</th>
+                        </tr>
+                        </thead>
+                        <tbody
+
+                        <f:for each="{kichhoattintimviec}" as="mautin"  iteration="iterator123" >
+                            <tr >
+                                <td>{iterator123.cycle}</td>
+                                <td>{mautin.title}</td>
+                                <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                <td>đợi kiểm tra</td>
+                                <td>
+                                    <f:link.action pluginName="Admin" controller="Tintimviec" action="edit" arguments="{tintimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                </td>
+                                <td>
+                                    <f:link.action pluginName="Admin" controller="Tintimviec" action="xoatin" arguments="{tintimviec: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                </td>
+                            </tr>
+                        </f:for>
+                        <f:if condition="{kichhoattintimviec -> f:count()}==0">
+                            <tr >
+                                <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào cần kích hoạt.</h4></td>
+                            </tr>
+                        </f:if>
+                        </tbody>
+                    </table>
+
+
+                    <br>
+                    <h2 style="color: #D41045; border-bottom: 1px solid #000">Kích hoạt mẩu tin tuyển dụng</h2>
+                    <table id="kichhoat4" class="display" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Thứ Tự</th>
+                            <th>Tiêu Đề</th>
+                            <th>Nội Dung</th>
+                            <th>Ngày Đăng</th>
+                            <th>Tình Trạng</th>
+                            <th>Thay Đổi</th>
+                            <th>Xóa</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <f:for each="{kichhoattintuyendung}" as="mautin"  iteration="iterator123" >
+                            <tr >
+                                <td>{iterator123.cycle}</td>
+                                <td>{mautin.title}</td>
+                                <td><f:format.crop maxCharacters="40">{mautin.noidung}</f:format.crop></td>
+                                <td><f:format.date format="d.m.Y">{mautin.crdate}</f:format.date></td>
+                                <td>đợi kiểm tra</td>
+                                <td>
+                                    <f:link.action pluginName="Admin" controller="Tintuyendung" action="edit" arguments="{tintuyendung: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Soạn Lại</f:link.action>
+                                </td>
+                                <td>
+                                    <f:link.action pluginName="Admin" controller="Tintuyendung" action="xoatin" arguments="{tintuyendung: mautin}" class="pull-right btn btn-primary" style="font-weight: bold;font-size: 13px;padding: 3px 10px;">Xóa</f:link.action>
+                                </td>
+                            </tr>
+                        </f:for>
+                        <f:if condition="{kichhoattintuyendung -> f:count()}==0">
+                            <tr >
+                                <td rowspan="7" colspan="7" style="text-align: center">  <h4 style="color:#E05500">Chưa có mẩu tin nào cần kích hoạt.</h4></td>
+                            </tr>
+                        </f:if>
+                        </tbody>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+        </f:then>
+    </f:if>
+
+    <br><br>
+    <!-- ende kich hoat tin nhan-->
+</f:comment>
+
+
+
+</f:section>

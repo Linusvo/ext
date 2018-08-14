@@ -1,0 +1,46 @@
+
+<f:be.container>
+	<div class="typo3-fullDoc">
+		<div id="typo3-docheader">
+			<div class="typo3-docheader-functions">
+				<div class="left">
+					<f:be.buttons.csh />
+					<f:be.menus.actionMenu>
+						<f:be.menus.actionMenuItem label="Overview" controller="" action="list" />
+						<f:be.menus.actionMenuItem label="Create new Nhomtho" action="new" controller="Nhomtho" />
+								<f:be.menus.actionMenuItem label="Create new Tinhthanhpho" action="new" controller="Tinhthanhpho" />
+								<f:be.menus.actionMenuItem label="Create new Quanhuyen" action="new" controller="Quanhuyen" />
+								<f:be.menus.actionMenuItem label="Create new Phuongxa" action="new" controller="Phuongxa" />
+								<f:be.menus.actionMenuItem label="Create new Duongpho" action="new" controller="Duongpho" />
+								<f:be.menus.actionMenuItem label="Create new Kategorienganh" action="new" controller="Kategorienganh" />
+								<f:be.menus.actionMenuItem label="Create new Unterkategorienganh" action="new" controller="Unterkategorienganh" />
+								<f:be.menus.actionMenuItem label="Create new Danhgia" action="new" controller="Danhgia" />
+								<f:be.menus.actionMenuItem label="Create new Thotimviec" action="new" controller="Thotimviec" />
+								<f:be.menus.actionMenuItem label="Create new Viectimtho" action="new" controller="Viectimtho" />
+								<f:be.menus.actionMenuItem label="Create new Tintuyendung" action="new" controller="Tintuyendung" />
+								<f:be.menus.actionMenuItem label="Create new Tintimviec" action="new" controller="Tintimviec" />
+					</f:be.menus.actionMenu>
+				</div>
+				<div class="right">
+					<f:be.pagePath />
+					<f:be.pageInfo />
+				</div>
+			</div>
+			<div class="typo3-docheader-buttons">
+				<div class="left">
+
+				</div>
+				<div class="right">
+					<f:be.buttons.shortcut />
+				</div>
+			</div>
+
+		</div>
+		<div id="typo3-docbody">
+			<div id="typo3-inner-docbody">
+				<f:flashMessages renderMode="div" />
+				<f:render section="content" />
+			</div>
+		</div>
+	</div>
+</f:be.container>

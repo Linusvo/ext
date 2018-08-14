@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-03-20T16:13:23Z" product-name="thosuachua">
+		<header/>
+		<body>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho">
+				<source>Nhomtho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.ten">
+				<source>Ten</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.mieuta">
+				<source>Mieuta</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.tailieu">
+				<source>Tailieu</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.diachi">
+				<source>Diachi</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.sonha">
+				<source>Sonha</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.dienthoai">
+				<source>Dienthoai</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.lienhe">
+				<source>Lienhe</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.emaillienhe">
+				<source>Emaillienhe</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.trangweb">
+				<source>Trangweb</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.kategorienghanh">
+				<source>Kategorienghanh</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.unterkategorienganh">
+				<source>Unterkategorienganh</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.tinhthanhpho">
+				<source>Tinhthanhpho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.quanhuyen">
+				<source>Quanhuyen</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.phuongxa">
+				<source>Phuongxa</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.duongpho">
+				<source>Duongpho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.danhgia">
+				<source>Danhgia</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_nhomtho.mautin">
+				<source>Mautin</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_tinhthanhpho">
+				<source>Tinhthanhpho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_tinhthanhpho.ten">
+				<source>Ten</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_tinhthanhpho.maso">
+				<source>Maso</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_tinhthanhpho.map">
+				<source>Map</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_tinhthanhpho.quanhuyen">
+				<source>Quanhuyen</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_tinhthanhpho.nhomtho">
+				<source>Nhomtho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_quanhuyen">
+				<source>Quanhuyen</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_quanhuyen.ten">
+				<source>Ten</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_quanhuyen.maso">
+				<source>Maso</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_quanhuyen.map">
+				<source>Map</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_quanhuyen.phuongxa">
+				<source>Phuongxa</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_quanhuyen.nhomtho">
+				<source>Nhomtho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_phuongxa">
+				<source>Phuongxa</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_phuongxa.ten">
+				<source>Ten</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_phuongxa.maso">
+				<source>Maso</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_phuongxa.map">
+				<source>Map</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_phuongxa.nhomtho">
+				<source>Nhomtho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_phuongxa.duongpho">
+				<source>Duongpho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_duongpho">
+				<source>Duongpho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_duongpho.ten">
+				<source>Ten</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_duongpho.map">
+				<source>Map</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_duongpho.sonha">
+				<source>Sonha</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_duongpho.phuongxa">
+				<source>Phuongxa</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_duongpho.nhomtho">
+				<source>Nhomtho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_kategorienganh">
+				<source>Kategorienganh</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_kategorienganh.ten">
+				<source>Ten</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_kategorienganh.mieuta">
+				<source>Mieuta</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_kategorienganh.unterkategorie">
+				<source>Unterkategorie</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_unterkategorienganh">
+				<source>Unterkategorienganh</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_unterkategorienganh.ten">
+				<source>Ten</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_unterkategorienganh.mieuta">
+				<source>Mieuta</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_unterkategorienganh.kategorie">
+				<source>Kategorie</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_danhgia">
+				<source>Danhgia</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_danhgia.danhgia">
+				<source>Danhgia</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_danhgia.sosao">
+				<source>Sosao</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_danhgia.nhomtho">
+				<source>Nhomtho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin">
+				<source>Mautin</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.noidung">
+				<source>Noidung</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.hinhanh">
+				<source>Hinhanh</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.batdau">
+				<source>Batdau</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.ketthuc">
+				<source>Ketthuc</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.www">
+				<source>Www</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.nhomtho">
+				<source>Nhomtho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.unterkategorienghanh">
+				<source>Unterkategorienghanh</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.kategorienghanh">
+				<source>Kategorienghanh</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.tinhthanhpho">
+				<source>Tinhthanhpho</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.quanhuyen">
+				<source>Quanhuyen</source>
+			</trans-unit>
+			<trans-unit id="tx_thosuachua_domain_model_mautin.phuongxa">
+				<source>Phuongxa</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

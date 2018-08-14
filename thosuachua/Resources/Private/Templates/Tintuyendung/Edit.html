@@ -1,0 +1,46 @@
+
+<f:layout name="Default" />
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Edit.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <br>  <br>
+    <div class="panel-heading" style="background-color: #088A08"><h3 style="color:#fff;margin-bottom: 10px; margin-top: 10px">Thay Đổi Thông Tin Tuyển Dụng </h3></div> 
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default" style="padding: 15px;">   
+            <br>
+            <f:form action="update" name="tintuyendung" object="{tintuyendung}" >
+                <f:render  partial="Tintuyendung/FormFields"  arguments="{feright:feright,tintuyendung:tintuyendung,unterkategorienganhs:unterkategorienganhs,kategorienganhs:kategorienganhs, quanhuyens:quanhuyens, tinhthanhs: tinhthanhs}" />
+                <br>
+                <hr class="hrcolor"> 
+                <a class="btn pull-left" href="/admin" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #E05500; color:#fff; text-shadow: none">Quay Lại</a>
+                <button type="submit" class="btn pull-right" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #E05500; color:#fff; text-shadow: none">Lưu Thay Đổi</button>
+            </f:form>
+            <br>  
+            <br>  
+        </div> 
+    </div>
+    <f:comment>
+        
+<h1>Edit Tintuyendung</h1>
+
+<f:flashMessages renderMode="div" />
+
+<f:render partial="FormErrors" arguments="{object:Tintuyendung}" />
+
+<f:form action="update" name="tintuyendung" object="{tintuyendung}" >
+<f:render partial="Tintuyendung/FormFields" arguments="{tintuyendung:tintuyendung}" />
+	<f:form.submit value="Save" />
+</f:form>
+    </f:comment>
+
+</f:section>

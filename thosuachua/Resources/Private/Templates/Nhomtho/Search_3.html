@@ -1,0 +1,299 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep pageUid="{pageuid}" controller="{controllername}" action="{actioname}"
+pluginName="search" controller="Nhomtho" action="hienthi"
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+        <f:if condition="{pageuid}==1">
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+            <form   class="form-inline" >
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                            <f:form.select class="checkselecttinhthanh" name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="{params.tinhthanhpho.1}" prependOptionLabel="{params.tinhthanhpho.0}"/>
+                        </div>
+                    </div>                          
+                    <div class="col-md-2">
+                        <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="{params.quanhuyen.1}" prependOptionLabel="{params.quanhuyen.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2" id="selectchuyennganh3" >
+                        <div class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[kategorienghanh]"   options="{kategorienganhs}"   optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.kategorienghanh.1}"  prependOptionLabel="{params.kategorienghanh.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2">
+                        <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[unterkategorienghanh]"   options="{unterkategorienganhs}"    optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.unterkategorienghanh.1}" prependOptionLabel="{params.unterkategorienghanh.0}"/>
+                        </div>
+                    </div>                           
+
+
+                    <div class="col-md-3">
+                        <input type="text"  placeholder="Từ cần tìm (Quí vị có thể bỏ qua mục này)"  class="form-control">
+                    </div>
+                    <div class="col-md-1">
+                        <div class="dangnhap-header">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt form-control" style="color:#fff !important" >Tìm</button>
+                        </div>
+                    </div>
+                </div>
+            </form> 
+                </div>
+        </f:if>
+    <f:if condition="{pageuid}==51">
+                  <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+            <form   class="form-inline" >
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                            <f:form.select name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="{params.tinhthanhpho.1}" prependOptionLabel="{params.tinhthanhpho.0}"/>
+                        </div>
+                    </div>                          
+                    <div class="col-md-2">
+                        <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="{params.quanhuyen.1}" prependOptionLabel="{params.quanhuyen.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2" id="selectchuyennganh3" >
+                        <div class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[kategorienghanh]"   options="{kategorienganhs}"   optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.kategorienghanh.1}"  prependOptionLabel="{params.kategorienghanh.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2">
+                        <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[unterkategorienghanh]"   options="{unterkategorienganhs}"    optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.unterkategorienghanh.1}" prependOptionLabel="{params.unterkategorienghanh.0}"/>
+                        </div>
+                    </div>                           
+
+
+                    <div class="col-md-3">
+                        <input type="text"  placeholder="Từ cần tìm (Quí vị có thể bỏ qua mục này)"  class="form-control">
+                    </div>
+                    <div class="col-md-1">
+                        <div class="dangnhap-header">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt form-control" style="color:#fff !important" >Tìm</button>
+                        </div>
+                    </div>
+                </div>
+            </form>   
+            
+                </div>
+        </f:if>
+        <f:if condition="{pageuid}==52">
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+            <form   class="form-inline" >
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                            <f:form.select name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="{params.tinhthanhpho.1}" prependOptionLabel="{params.tinhthanhpho.0}"/>
+                        </div>
+                    </div>                          
+                    <div class="col-md-2">
+                        <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="{params.quanhuyen.1}" prependOptionLabel="{params.quanhuyen.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2" id="selectchuyennganh3" >
+                        <div class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[kategorienghanh]"   options="{kategorienganhs}"   optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.kategorienghanh.1}"  prependOptionLabel="{params.kategorienghanh.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2">
+                        <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[unterkategorienghanh]"   options="{unterkategorienganhs}"    optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.unterkategorienghanh.1}" prependOptionLabel="{params.unterkategorienghanh.0}"/>
+                        </div>
+                    </div>                           
+
+
+                    <div class="col-md-3">
+                        <input type="text"  placeholder="Từ cần tìm (Quí vị có thể bỏ qua mục này)"  class="form-control">
+                    </div>
+                    <div class="col-md-1">
+                        <div class="dangnhap-header">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt form-control" style="color:#fff !important" >Tìm</button>
+                        </div>
+                    </div>
+                </div>
+            </form>      
+
+    </div>
+        </f:if>
+        <!--- tuyen dung -->
+        <f:if condition="{pageuid}==48">
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+            <form   class="form-inline" >
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                            <f:form.select name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="{params.tinhthanhpho.1}" prependOptionLabel="{params.tinhthanhpho.0}"/>
+                        </div>
+                    </div>                          
+                    <div class="col-md-2">
+                        <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="{params.quanhuyen.1}" prependOptionLabel="{params.quanhuyen.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2" id="selectchuyennganh3" >
+                        <div class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[kategorienghanh]"   options="{kategorienganhs}"   optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.kategorienghanh.1}"  prependOptionLabel="{params.kategorienghanh.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2">
+                        <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[unterkategorienghanh]"   options="{unterkategorienganhs}"    optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.unterkategorienghanh.1}" prependOptionLabel="{params.unterkategorienghanh.0}"/>
+                        </div>
+                    </div>                           
+
+
+                    <div class="col-md-3">
+                        <input type="text"  placeholder="Từ cần tìm (Quí vị có thể bỏ qua mục này)"  class="form-control">
+                    </div>
+                    <div class="col-md-1">
+                        <div class="dangnhap-header">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt form-control" style="color:#fff !important" >Tìm</button>
+                        </div>
+                    </div>
+                </div>
+            </form>      
+
+    </div>
+        </f:if>
+        
+             <!--- tuyen dung -->
+        <f:if condition="{pageuid}==53">
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+            <form   class="form-inline" >
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                            <f:form.select name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="{params.tinhthanhpho.1}" prependOptionLabel="{params.tinhthanhpho.0}"/>
+                        </div>
+                    </div>                          
+                    <div class="col-md-2">
+                        <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="{params.quanhuyen.1}" prependOptionLabel="{params.quanhuyen.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2" id="selectchuyennganh3" >
+                        <div class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[kategorienghanh]"   options="{kategorienganhs}"   optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.kategorienghanh.1}"  prependOptionLabel="{params.kategorienghanh.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2">
+                        <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[unterkategorienghanh]"   options="{unterkategorienganhs}"    optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.unterkategorienghanh.1}" prependOptionLabel="{params.unterkategorienghanh.0}"/>
+                        </div>
+                    </div>                           
+
+
+                    <div class="col-md-3">
+                        <input type="text"  placeholder="Từ cần tìm (Quí vị có thể bỏ qua mục này)"  class="form-control">
+                    </div>
+                    <div class="col-md-1">
+                        <div class="dangnhap-header">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt form-control" style="color:#fff !important" >Tìm</button>
+                        </div>
+                    </div>
+                </div>
+            </form>      
+
+    </div>
+        </f:if>
+             
+             
+                  <!---tin tim viec -->
+        <f:if condition="{pageuid}==56">
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+            <form   class="form-inline" >
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                            <f:form.select name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="{params.tinhthanhpho.1}" prependOptionLabel="{params.tinhthanhpho.0}"/>
+                        </div>
+                    </div>                          
+                    <div class="col-md-2">
+                        <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="{params.quanhuyen.1}" prependOptionLabel="{params.quanhuyen.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2" id="selectchuyennganh3" >
+                        <div class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[kategorienghanh]"   options="{kategorienganhs}"   optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.kategorienghanh.1}"  prependOptionLabel="{params.kategorienghanh.0}"/>
+                        </div>
+                    </div>
+                    <div class=" col-md-2">
+                        <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                            <f:form.select name="searchparam[unterkategorienghanh]"   options="{unterkategorienganhs}"    optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="{params.unterkategorienghanh.1}" prependOptionLabel="{params.unterkategorienghanh.0}"/>
+                        </div>
+                    </div>                           
+
+
+                    <div class="col-md-3">
+                        <input type="text"  placeholder="Từ cần tìm (Quí vị có thể bỏ qua mục này)"  class="form-control">
+                    </div>
+                    <div class="col-md-1">
+                        <div class="dangnhap-header">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt form-control" style="color:#fff !important" >Tìm</button>
+                        </div>
+                    </div>
+                </div>
+            </form>      
+
+    </div>
+        </f:if>
+
+                  <f:if condition="{pageuid}==50"> 
+                  
+                               <div data-dotnav-title="Start" data-dotnav-id="home"  style="background-image: url('fileadmin/user_upload/teaser02.jpg'); border-top: 10px #D41045 solid; border-bottoms: 10px #D41045 solid" class="u-full-width headerContainerBig headerContainerMedium dotNavTarget">
+                  <div class="row" >
+                <main class="col-md-12" style="height: 380px; position: relative;" >
+                    <div class="textimgaeposition">
+                        <h3 class="headlineBackground textimgaeposition1" >
+                            <span class="headlineBackgroundDefault">THỢ LÀNH NGHỀ</span>
+                        </h3>
+                    </div>
+                    <div class="textimgaeposition2">
+                        <h1 class="headlineBackground textimgaeposition3">
+                            <span class="headlineBackgroundDefault">Thế giới chưa hoàn thiện</span>
+                            <br>	
+                            <span class="headlineBackgroundHighlight">Mọi lúc mọi nơi cần thợ</span>
+                        </h1>
+                    </div>
+                </main>
+            </div>
+  </f:if>
+                  
+                  
+                  <f:if condition="{pageuid}==64"> 
+                  
+                               <div data-dotnav-title="Start" data-dotnav-id="home"  style="background-image: url('fileadmin/user_upload/teaser02.jpg'); border-top: 10px #D41045 solid; border-bottoms: 10px #D41045 solid" class="u-full-width headerContainerBig headerContainerMedium dotNavTarget">
+                  <div class="row" >
+                <main class="col-md-12" style="height: 380px; position: relative;" >
+                    <div class="textimgaeposition">
+                        <h3 class="headlineBackground textimgaeposition1" >
+                            <span class="headlineBackgroundDefault">THỢ LÀNH NGHỀ</span>
+                        </h3>
+                    </div>
+                    <div class="textimgaeposition2">
+                        <h1 class="headlineBackground textimgaeposition3">
+                            <span class="headlineBackgroundDefault">Thế giới chưa hoàn thiện</span>
+                            <br>	
+                            <span class="headlineBackgroundHighlight">Mọi lúc mọi nơi cần thợ</span>
+                        </h1>
+                    </div>
+                </main>
+            </div>
+  </f:if>
+</f:section>

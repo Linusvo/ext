@@ -1,0 +1,121 @@
+<style>
+    select {
+        width: 100%!important;
+    }
+    #mceu_29 {
+        display: none;
+    }
+
+</style>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'#mytextarea' });</script>
+<f:if condition="{feright}==3">
+    <div class="form-group">
+        <label for="">Không Hiển Thị (Chế Độ Ẩn Tin Nhắn)</label>
+        <f:form.checkbox property="hidden1" value="1" class="form-control" style="width:3%; margin-top:0px "/>
+    </div>
+</f:if>
+
+<div class="row">
+
+    <div class=" col-md-4">
+        <div class="form-group" id="selecttinhthanhphotintimviec">
+            <label for="">Tĩnh/Thành Phố</label>
+            <f:form.select property="tinhthanhpho"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionLabel="Chọn Tĩnh-Thành Phố" style=""/>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group" >
+            <label for="">Quận/Huyện</label>
+            <div id="ajaxformtintimviec">
+                <f:form.select property="quanhuyen" options="{quanhuyens}" optionValueField="uid" optionLabelField="ten"  prependOptionLabel="Chọn Quận-Huyện" class="form-control" style=""/>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="">Phường/Xã</label>
+            <f:form.textfield name="phuongxaten" class="form-control" style=""/>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <label for="">Chuyên Ngành</label>
+    <div id="chuyennganhtintimviec">
+        <f:format.htmlentitiesDecode>   {unterkategorienganh1s}</f:format.htmlentitiesDecode>
+    </div>
+</div>
+<f:comment>
+    <div class="form-group">
+        <label for="">Tiêu Đề Mẩu Tin</label>
+        <f:form.textfield  type="text" property="title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="">Nội Dung Mẩu Tin</label>
+        <f:form.textarea property="noidung" cols="20" rows="5" class="form-control"/>
+    </div>
+</f:comment>
+
+
+<div class="form-group">
+    <label for="">Tên Xưởng</label>
+       <f:form.textfield  type="text" property="tennguoitim" class="form-control" />
+</div>
+<div class="form-group">
+    <label for="">Giới Thiệu Ngắn</label>
+    <f:form.textarea property="noidung" cols="20" rows="2" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Miêu Tả Xưởng</label>
+        <f:form.textarea  id="mytextarea" property="mieutacanhan" cols="20" rows="5" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Địa Chỉ</label>
+    <f:form.textfield  property="diachi"  class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Điện Thoại</label>
+    <f:form.textfield property="phone" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">E-Mail</label>
+    <f:form.textfield property="email" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Fax</label>
+    <f:form.textfield property="fax" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Trang Web</label>
+    <f:form.textfield property="www" class="form-control"/>
+</div>
+<f:comment>
+<div class="form-group">
+    <label for="">Thông Tin Liên Hệ Khác</label>
+    <f:form.textfield property="lienhe" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Bắt Đầu</label>
+    <f:form.textfield property="batdau" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Kết Thúc</label>
+    <f:form.textfield property="ketthuc" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <f:form.hidden  property="administrator" value="{nhomtho}"  class="form-control"/>
+</div>
+<div class="form-group">
+      <label for="">Nhóm thợ: {tintimviec.administrator.uid}</label>
+  </div>
+   
+ </f:comment>
+  <f:if condition="{newfunktion}">
+<div class="form-group">
+    <f:form.hidden  property="administrator" value="{nhomtho}"  class="form-control"/>
+</div>
+</f:if>

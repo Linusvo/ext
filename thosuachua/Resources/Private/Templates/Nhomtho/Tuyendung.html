@@ -1,0 +1,233 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="main-container">
+                    <article class="teaser-list">
+                        <header>
+                            <h2 style="height: 24px;">Thông báo nhà tuyển dụng</h2>
+                            <div class="icon-content">
+                                <p class="glyphicon glyphicon-th"></p>
+                            </div>
+                        </header>
+                        <div class="content-home">
+                            <div class="same-height">
+                                <f:for each="{tintuyendungs}" as="tintuyendung" iteration="Iterator">
+                                    <f:if condition="{Iterator.index} < 10">
+                                    
+                                    <div class="news">
+                                        <span>
+                                            <f:format.date date="now" format="d.m.Y" />
+                                            <f:comment>
+                                                <f:format.date format="d.m.Y">{tintuyendung.crdate}</f:format.date>
+                                            </f:comment>
+                                            &nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
+                                              <f:link.action pageUid="55" pluginName="Tintuyendungliste" controller="Tintuyendung"  action="show" arguments="{tintuyendung: tintuyendung}">
+                                            <f:format.crop maxCharacters="50">{tintuyendung.title}</f:format.crop>
+                                         </f:link.action></span>
+                                        <p>
+                                        <f:link.action pageUid="55"  pluginName="Tintuyendungliste"  controller="Tintuyendung"  action="show" arguments="{tintuyendung: tintuyendung}">
+                                            <f:format.crop maxCharacters="202">{tintuyendung.noidung}</f:format.crop>    
+                                        </f:link.action>
+                                        </p>
+                                    </div>
+                                            
+                                    </f:if>
+                                </f:for>                   
+
+                            </div>
+                            <footer class="module-link">
+                                         <f:link.action pageUid="53" pluginName="Tintuyendungliste" controller="Tintuyendung"  action="list" >
+                                           <b>Xem Tất Cả</b>&nbsp;&nbsp;<span>›</span>  
+                                        </f:link.action>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="main-container">
+                    <article class="teaser-list">
+                        <header>
+                            <h2 style="height: 24px;">Hồ Sơ Thợ Tìm Việc</h2>
+                            <div class="icon-content">
+                                <p class="glyphicon glyphicon-th"></p>
+                            </div>
+                        </header>
+                        <div class="content-home">
+                            <div class="same-height" >
+                                <f:for each="{tintimviecs}" as="tintimviec"iteration="Iterator1">
+                                    <f:if condition="{Iterator1.index} < 10">
+                                    <div class="news">
+                                        <span> <f:format.date date="now" format="d.m.Y" />&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp; 
+                                           <f:link.action pageUid="57" pluginName="Tintimviecliste"  controller="Tintimviec"  action="show"  arguments="{tintimviec: tintimviec}">
+                                           <f:format.crop maxCharacters="50">{tintimviec.title}</f:format.crop>   
+                                        </f:link.action>
+                                        </span>
+                                        <p>
+                                        <f:link.action pageUid="57"  pluginName="Tintimviecliste"  controller="Tintimviec"  action="show"  arguments="{tintimviec: tintimviec}">
+                                            <f:format.crop maxCharacters="202">{tintimviec.noidung}</f:format.crop>    
+                                        </f:link.action>
+                                        </p>
+                                    </div>
+                                    </f:if>
+                                </f:for>   
+
+                            </div>
+                            <footer class="module-link">
+                                   <f:link.action pageUid="56" pluginName="Titntimviecliste" controller="Titntimviec"  action="list" >
+                                           <b>Xem Tất Cả</b>&nbsp;&nbsp;<span>›</span>  
+                                        </f:link.action>
+                            </footer>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <article style="margin-top:70px; margin-bottom: 30px;border: none" class="teaser-list">
+                    <header style="">
+                        <h2 style="height: 24px;">Nhà Tuyển Dụng Tiềm Năng</h2>
+                        <div class="icon-content">
+                            <p class="glyphicon glyphicon-th"></p>
+                        </div>
+                    </header>
+                </article></div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <div data-dotnav-title="Start" data-dotnav-id="home"  style="background-image: url('fileadmin/user_upload/tuyendung.jpg')" class="">
+                    <div  style="height: 200px; position: relative;" >
+                        <div class="divtuyendung">
+                            <h1 class="headlineBackground h1tuyendung" >
+                                <span class="headlineBackgroundDefault">Quí Vị Muốn Tìm Thợ Giỏi?.</span>
+                                <br>	
+                                <span class="headlineBackgroundHighlight">Quí Vị Muốn Tìm Việc Làm Tốt?.</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <h2 class="h2border">
+                        <a style=" color: #DB0050" href="#">Hướng Dẩn Tìm Kiếm</a>
+                    </h2>
+                </div>
+                <div class="fix">
+                    <p>
+                        <a href="#">
+                            Công cụ tìm kiếm của hệ thống rất dễ sử dụng, nhưng nếu quí vị lần đầu sử
+                            dụng và gắp khó khăn, hãy nhấn vào đây để xem hướng dẩn chi tiết về cách tìm kiếm.
+                        </a>
+                    </p>
+                    <div class="module-content">
+                    </div>
+                    <hr style="border-color: #797C80"> 
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div data-dotnav-title="Start" data-dotnav-id="home"  style="background-image: url('fileadmin/user_upload/tdung1.jpg')" class="">
+                    <div  style="height: 200px; position: relative;" >
+                        <div class="divtuyendung">
+                            <h1 class="headlineBackground h1tuyendung1" >
+                                <span class="headlineBackgroundDefault1">Hoàn Toàn Miển Phí</span>
+                                <br>	
+                                <span class="headlineBackgroundHighlight">Đăng Ký Nhanh Chóng-Quản Trị Đơn Giản-Đầy Đủ Chức Năng</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <h2 class="h2border">
+                        <a style=" color: #DB0050" href="#">Hướng Dẩn Đăng Ký</a>
+                    </h2>
+                </div>
+                <div class="fix">
+                    <p>
+                        <a href="#">
+                            Dù quí vị là cá nhân hay công ty, nếu quí vị muốn tiếp cận khách hàng, hay tìm việc cũng như đăng 
+                            tin tuyển dụng và nhiều chức năng khác, hãy nhanh chóng tạo tài khoản cho mình.
+                        </a>
+                    </p>
+                    <div class="module-content">
+                    </div> <hr style="border-color: #797C80"> 
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div data-dotnav-title="Start" data-dotnav-id="home"  style="background-image: url('fileadmin/user_upload/tuyendung.jpg')" class="">
+                    <div  style="height: 200px; position: relative;" >
+                        <div class="divtuyendung">
+                            <h1 class="headlineBackground h1tuyendung" >
+                                <span class="headlineBackgroundDefault">Mọi Người Đang Tìm Bạn</span>
+                                <br>	
+                                <span class="headlineBackgroundHighlight">Hãy Đăng Tin Để Mọi Người Thấy Bạn</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <h2 class="h2border">
+                        <a style=" color: #DB0050" href="#">Hướng Dẩn Đăng Tin</a>
+                    </h2>
+                </div>
+                <div class="fix">
+                    <p>
+                        <a href="#">
+                            Mọi người đang tìm kiếm quí vị khắp mọi nơi, hãy để mọi người biết tài năng của quí vị hay điều
+                            gì quí vị đang cần. Không quá 5 phút để quí vị thực hiện điều đó tại hệ thống này.
+                        </a>
+                    </p>
+                    <div class="module-content">
+                    </div> <hr style="border-color: #797C80"> 
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div data-dotnav-title="Start" data-dotnav-id="home"  style="background-image: url('fileadmin/user_upload/tdung1.jpg')" class="">
+
+                    <div  style="height: 200px; position: relative;" >
+                        <div class="divtuyendung">
+                            <h1 class="headlineBackground h1tuyendung1" >
+                                <span class="headlineBackgroundDefault1">Quí Vị Gặp Khó Khăn?</span>
+                                <br>	
+                                <span class="headlineBackgroundHighlight">Quí Vị Cần Trợ Giúp?</span>
+                                <br>	
+                                <span class="headlineBackgroundHighlight">Chúng Tôi Luôn Bên Quí Vị.</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <h2 class="h2border">
+                        <a style=" color: #DB0050" >TÌM THỢ SỬA CHỮA</a>
+                    </h2>
+                </div>
+                <div class="fix">
+                    <p style="color:#008000">
+                        Tìm thợ sửa chữa, tìm thợ lành nghề.<br>
+                        Thợ tìm việc làm, thợ đăng tin tìm việc.<br>
+                        Đăng tuyển dụng thợ.<br>
+                        Chia sẽ kinh nghiệm thợ sửa chữa.<br>
+                        Kết nối thợ sửa chữa<br>
+                        
+                    </p>
+                    <div class="module-content">
+                    </div> <hr style="border-color: #797C80"> 
+                </div>
+            </div>
+        </div>
+
+        <br><br> 
+    </div>
+    <br><br>
+</f:section>

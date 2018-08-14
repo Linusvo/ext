@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-04-02T23:40:49Z" product-name="thosuachua">
+		<header/>
+		<body>
+			<trans-unit id="ten.description">
+				<source>ten</source>
+			</trans-unit>
+			<trans-unit id="mieuta.description">
+				<source>mieuta</source>
+			</trans-unit>
+			<trans-unit id="tailieu.description">
+				<source>tailieu</source>
+			</trans-unit>
+			<trans-unit id="diachi.description">
+				<source>diachi</source>
+			</trans-unit>
+			<trans-unit id="sonha.description">
+				<source>sonha</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="dienthoai.description">
+				<source>dienthoai</source>
+			</trans-unit>
+			<trans-unit id="lienhe.description">
+				<source>lienhe</source>
+			</trans-unit>
+			<trans-unit id="emaillienhe.description">
+				<source>emaillienhe</source>
+			</trans-unit>
+			<trans-unit id="trangweb.description">
+				<source>trangweb</source>
+			</trans-unit>
+			<trans-unit id="kategorienghanh.description">
+				<source>kategorienghanh</source>
+			</trans-unit>
+			<trans-unit id="unterkategorienganh.description">
+				<source>unterkategorienganh</source>
+			</trans-unit>
+			<trans-unit id="tinhthanhpho.description">
+				<source>tinhthanhpho</source>
+			</trans-unit>
+			<trans-unit id="quanhuyen.description">
+				<source>quanhuyen</source>
+			</trans-unit>
+			<trans-unit id="phuongxa.description">
+				<source>phuongxa</source>
+			</trans-unit>
+			<trans-unit id="duongpho.description">
+				<source>duongpho</source>
+			</trans-unit>
+			<trans-unit id="danhgia.description">
+				<source>danhgia</source>
+			</trans-unit>
+			<trans-unit id="mautin.description">
+				<source>mautin</source>
+			</trans-unit>
+			<trans-unit id="thotimviec.description">
+				<source>thotimviec</source>
+			</trans-unit>
+			<trans-unit id="viectimtho.description">
+				<source>viectimtho</source>
+			</trans-unit>
+			<trans-unit id="tintuyendung.description">
+				<source>tintuyendung</source>
+			</trans-unit>
+			<trans-unit id="tintimviec.description">
+				<source>tintimviec</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

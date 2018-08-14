@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-03-20T16:13:23Z" product-name="thosuachua">
+		<header/>
+		<body>
+			<trans-unit id="ten.description">
+				<source>ten</source>
+			</trans-unit>
+			<trans-unit id="map.description">
+				<source>map</source>
+			</trans-unit>
+			<trans-unit id="sonha.description">
+				<source>sonha</source>
+			</trans-unit>
+			<trans-unit id="phuongxa.description">
+				<source>phuongxa</source>
+			</trans-unit>
+			<trans-unit id="nhomtho.description">
+				<source>nhomtho</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

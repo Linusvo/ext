@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-03-20T16:13:23Z" product-name="thosuachua">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="noidung.description">
+				<source>noidung</source>
+			</trans-unit>
+			<trans-unit id="hinhanh.description">
+				<source>hinhanh</source>
+			</trans-unit>
+			<trans-unit id="link.description">
+				<source>link</source>
+			</trans-unit>
+			<trans-unit id="batdau.description">
+				<source>batdau</source>
+			</trans-unit>
+			<trans-unit id="ketthuc.description">
+				<source>ketthuc</source>
+			</trans-unit>
+			<trans-unit id="www.description">
+				<source>www</source>
+			</trans-unit>
+			<trans-unit id="nhomtho.description">
+				<source>nhomtho</source>
+			</trans-unit>
+			<trans-unit id="unterkategorienghanh.description">
+				<source>unterkategorienghanh</source>
+			</trans-unit>
+			<trans-unit id="kategorienghanh.description">
+				<source>kategorienghanh</source>
+			</trans-unit>
+			<trans-unit id="tinhthanhpho.description">
+				<source>tinhthanhpho</source>
+			</trans-unit>
+			<trans-unit id="quanhuyen.description">
+				<source>quanhuyen</source>
+			</trans-unit>
+			<trans-unit id="phuongxa.description">
+				<source>phuongxa</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

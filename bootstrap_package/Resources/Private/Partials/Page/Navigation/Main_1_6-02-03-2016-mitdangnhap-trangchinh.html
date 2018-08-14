@@ -1,0 +1,141 @@
+<header class="navbar navbar-{themeNavigationstyle}{f:if(condition:logoFile,then:' navbar-has-image')}{f:if(condition:themeNavigationtype, else:' navbar-top', then:' navbar-{themeNavigationtype} navbar-fixed-{themeNavigationtype}')}">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header navbar-header-main">
+                <f:if condition="{logoFile}">
+                    <f:then>
+                        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-image">
+                            <img src="{f:uri.image(src: logoFile)}" alt="{logoAlt}" height="{logoHeight}" width="{logoWidth}">
+                        </f:link.page>
+                    </f:then>
+                    <f:else>
+                        <f:link.page pageUid="{rootPage}" class="navbar-brand">{siteTitle}</f:link.page>
+                    </f:else>
+                </f:if>
+                <f:if condition="{f:cObject(typoscriptObjectPath:'lib.navigation.main')}">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </f:if>
+                <span class="navbar-header-border-bottom"></span>
+            </div>
+            <nav class="navbar-collapse collapse" style="float:right;color: #27475e;font-family: Univers-67-CondBold,Arial,sans-serif;" role="navigation">
+                <f:cObject typoscriptObjectPath="lib.navigation.main"/>
+                <a>ádasd</a>
+            </nav>
+
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-md-12">
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+                    <form class="form-inline" role="form">
+                        <div class="row">
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+
+                                    <select class="form-control" style="width: 100%;">
+                                        <option>Tĩnh/Thành Phố</option>
+                                        <option>2asdasdasdasdasdasdasdasdasdasdasdasdsad</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="form-group">
+
+                                    <select class="form-control" style="width: 100%;">
+                                        <option>Quận Huyện &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class=" col-md-2">
+                                <div class="form-group">
+                                    <select class="form-control" style="width: 100%;" >
+                                        <option>Nhóm Ngành &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text"  placeholder="Từ cần tìm" id="exampleInputPassword3" class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" style="background-color: #41c400" class="btn btn-default facebook1">
+                                    tìm kiếm
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="dangnhap-header">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block  dangnhapbt">Đăng Nhập</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row anmeldenformular"  style="display: none; ">
+            <div class="col-md-6">
+                <p style="display: none" class="werthiden">1</p>
+            </div>
+            <div class="col-md-6" >
+                <f:cObject typoscriptObjectPath="lib.loginContent" />
+                <f:comment>
+                    <div class="anmeldenformular-input">
+                        <form class="form-inline">
+                            <div class="col-md-4 form-group inputlogin1">
+                                <input type="email" placeholder="Email" id="exampleInputEmail3" class="form-control">
+                                <input style="display: none" class="form-control">
+                            </div>
+
+                            <div class="col-md-4 form-group inputlogin2">
+                                <input type="password" placeholder="Password" id="exampleInputPassword3" class="form-control">
+                            </div>
+                            <span class="col-md-4 loginbtnaa">
+                                <button class="btn btn-default loginbtn" type="submit">Sign in</button>
+                            </span>
+
+                        </form>
+                        <div class="acount-regist">
+                            <p style="font-weight: 1;font-size:1px"> &nbsp</p>
+                            <a class="registrierer" style="color:#fff; padding: 5px 0;"> klicken sie bitte auf neue Konto erstellen </a>
+                        </div>
+                    </div>    
+                </f:comment>
+
+            </div>
+        </div>
+
+        <div class="row anmeldenformular1"  style="display: none;">
+            <div class="col-md-12" >
+                <div class="col-md-12 registformular-text" >
+                    <f:cObject typoscriptObjectPath="lib.registrierenContent" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>

@@ -1,0 +1,55 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Nhomtho</h1>
+
+<f:flashMessages />
+
+<table  class="tx_thosuachua" >
+	<tr>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.ten" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.mieuta" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.tailieu" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.diachi" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.sonha" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.email" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.dienthoai" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.lienhe" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.emaillienhe" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_nhomtho.trangweb" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{nhomthos}" as="nhomtho">
+		<tr>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.ten}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.mieuta}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.tailieu.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.diachi}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.sonha}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.dienthoai}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.lienhe}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.emaillienhe}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{nhomtho : nhomtho}"> {nhomtho.trangweb}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{nhomtho : nhomtho}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{nhomtho : nhomtho}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Nhomtho</f:link.action>
+</f:section>

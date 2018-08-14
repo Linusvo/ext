@@ -1,0 +1,92 @@
+<f:layout name="Default" />
+
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <br><br>
+        <div class="container">
+        <div class="row">
+            <main class="col-md-12" role="main">
+                
+       
+       <div data-example-id="table-within-panel" class="bs-example">
+            <div class="panel panel-default"> 
+
+                <div class="panel-heading"><b>Thông Tin Công Ty/Nhóm Thợ</b></div> 
+                <div class="panel-body"> 
+
+            
+                </div>    
+                <table class="table"> 
+
+                    <tbody> 
+                        <tr> 
+                            <td   style="color: #3374AD; width: 20% "><b>Tên Công Ty/Nhóm Thợ</b></td> 
+                            <td style="color: #3374AD; ">{nhomtho.ten}</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; width: 20% "><b>Nhóm Ngành</b></td> 
+                            <td style="color: #3374AD; ">Nếu quí vị gặp khó khăn trong bất</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; width: 20% "><b>Chuyên Ngành</b></td> 
+                            <td style="color: #3374AD; ">Nếu quí vị gặp khó khăn trong bất</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; ">Miêu tả công ty</td> 
+                            <td style="color: #3374AD; ">{nhomtho.mieuta}  </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; ">Tĩnh/Thành Phố</td> 
+                            <td style="color: #3374AD; ">{nhomtho.diachi}  </tr>
+                        <tr> 
+                            <td   style="color: #3374AD; ">Quận/Huyện</td> 
+                            <td style="color: #3374AD; ">{nhomtho.diachi}  </tr>
+                        <tr> 
+                            <td   style="color: #3374AD; ">Phường/Xã</td> 
+                            <td style="color: #3374AD; ">{nhomtho.diachi}  </tr>
+                        <tr> 
+                            <td   style="color: #3374AD; ">Địa Chỉ đường phố</td> 
+                            <td style="color: #3374AD; ">{nhomtho.diachi}  </tr>
+                        <tr> 
+                            <td   style="color: #3374AD; ">E-mail</td> 
+                            <td style="color: #3374AD; ">{nhomtho.emailcty}</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; ">Điện thoại</td> 
+                            <td style="color: #3374AD; ">{nhomtho.dienthoai}</td> 
+                        </tr> 
+                        <tr> 
+                            <td   style="color: #3374AD; ">Fax</td> 
+                            <td style="color: #3374AD; ">{nhomtho.sofax}</td> 
+                        </tr> 
+                        <tr>        
+                            <td   style="color: #3374AD;">Địa chỉ trang Web</td> 
+                            <td style="color: #3374AD; ">{nhomtho.trangweb}</td> 
+                        </tr> 
+
+                    </tbody> 
+                </table>
+
+
+            </div> 
+            <div class="row">   
+                <div class="col-md-12">
+                    <f:link.action class="pull-right btn btn-primary"  style="font-weight: bold;font-size: 20px;" action="edit" arguments="{nhomtho: nhomtho}">Thay Đổi Thông Tin</f:link.action>
+                </div>     
+            </div>
+        </div>
+                     </main>
+                       </div>
+        </div>
+</f:section>
+

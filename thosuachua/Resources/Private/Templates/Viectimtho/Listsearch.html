@@ -1,0 +1,99 @@
+{namespace m=VOV\Thosuachua\ViewHelpers}
+{namespace tsc=VOV\Thosuachua\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    
+    <div class="main-container" style="padding-top: 10px !important">
+        <article class="teaser-list">
+			<f:comment>
+				<header style="background: #36AD33 !important;padding: 1.3em 4em 0.4em 1.1em!important;">
+					<h2 style="height: 24px;font-size: 1em!important;">Tìm Thợ</h2>
+					<i class="icon-content">
+						<p class="glyphicon glyphicon-th"></p>
+					</i>
+				</header>
+			</f:comment>
+
+               <br> 
+            <div class="content-home">
+                <div class="same-height">
+					<f:if condition="{f:count(subject: viectimthos)}==0">
+						<f:then>
+							<br>
+							<br>
+							<div style="text-align: center"><b >Không có kết quả nào được tìm thấy!</b>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							</div>
+
+						</f:then>
+						<f:else>
+							<m:Paginate objects="{viectimthos}" as="paginatedObjekt" configuration="{itemsPerPage: 10, insertAbove: 0, insertBelow: 1}">
+								<f:for each="{paginatedObjekt}" as="viectimtho" iteration="fooIterator">
+									<div class="news" style="border-bottom:1px solid #99c999 !important;">
+                                <span style="color: #ff2d84; font-weight: normal"><f:format.date date="{viectimtho.crdate}" format="d.m.Y" />&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
+                                    <f:link.action   style="color: #002bff !important; font-weight: bold;" action="show" arguments="{viectimtho: viectimtho}">
+                                        <f:format.crop maxCharacters="50">{viectimtho.title}</f:format.crop>
+                                    </f:link.action></span>
+										<br>
+										<p class="teaserOrt" style="margin-bottom:0!important;color:#42b091; display: inline-block;font-size:1x !important; font-weight:bold;border-bottom:1px solid #f3f5f3">
+											<f:if condition="{viectimtho.tinhthanhpho1} == 0 ">
+												<f:then>
+													- {viectimtho.tinhthanhpho.0.ten} - {viectimtho.quanhuyen.0.ten} :
+													<f:if condition="{viectimtho.unterkategorie} == '' ">
+														<f:then>
+															{viectimtho.kategorienganh.0.ten}
+														</f:then>
+														<f:else>
+															<v:variable.set name="unterkategoriehelper" value="{tsc:unterkategorie(unterkategorie:viectimtho.unterkategorie)}" />
+															{unterkategoriehelper.ten}
+														</f:else>
+													</f:if>
+												</f:then>
+												<f:else>
+													<v:variable.set name="thanhphoShow" value="{tsc:thanhPho1(thotimviec:viectimtho)}" />
+													- {thanhphoShow.thanhpho.ten} - {thanhphoShow.quanhuyen.ten} : {viectimtho.unterkategorie.ten}
+													<f:if condition="{viectimtho.unterkategorie} == '' ">
+														<f:then>
+															{viectimtho.kategorienganh.0.ten}
+														</f:then>
+														<f:else>
+															<v:variable.set name="unterkategoriehelper" value="{tsc:unterkategorie(unterkategorie:viectimtho.unterkategorie)}" />
+															{unterkategoriehelper.ten}
+														</f:else>
+													</f:if>
+												</f:else>
+											</f:if>
+										</p>
+										<p >
+											<f:link.action  style="color: #002bff !important;" action="show" arguments="{viectimtho: viectimtho}">
+												<f:format.crop maxCharacters="150">{viectimtho.noidung}</f:format.crop>
+											</f:link.action>
+										</p>
+									</div>
+								</f:for>
+							</m:Paginate>
+						</f:else>
+					</f:if>
+                </div>
+            </div>
+        </article>
+    </div>
+
+</f:section>

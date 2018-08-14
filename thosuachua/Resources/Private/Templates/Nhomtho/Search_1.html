@@ -1,0 +1,91 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+pluginName="search" controller="Nhomtho" action="hienthi"
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+       <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+                       <form class="form-inline"  name="asdasdasdasd">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                                    <f:form.select name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="" prependOptionLabel="Tỉnh/Thành Phố"/>
+                                </div>
+                            </div>                          
+                            <div class="col-md-2">
+                                <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                                        <f:form.select name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="" prependOptionLabel="Quận/Huyện"/>
+                                </div>
+                            </div>
+                              <div class=" col-md-2" id="selectchuyennganh3" >
+                                    <div class="form-group" style="width: 100%">
+                                 <f:form.select name="searchparam[kategorienghanh]"   options="{kategorienganhs}"   optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="" prependOptionLabel="Ngành/Nhóm Ngành"/>
+                            </div>
+                              </div>
+                               <div class=" col-md-2">
+                                 <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                                    <f:form.select name="searchparam[unterkategorienganh]"   options="{unterkategorienganhs}"    optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="" prependOptionLabel="Chuyên Ngành"/>
+                                </div>
+                              </div>                           
+                  
+   
+                            <div class="col-md-3">
+                                <input type="text"  placeholder="Từ cần tìm (Quí vị có thể bỏ qua mục này)"  class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <div class="dangnhap-header">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt form-control" style="color:#fff !important" >Tìm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    <f:comment>
+           <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+                       <form class="form-inline"  name="asdasdasdasd">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                                    <f:form.select name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="" prependOptionLabel="Tỉnh/Thành Phố"/>
+                                </div>
+                            </div>                          
+                            <div class="col-md-2">
+                                <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                                        <f:form.select name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="" prependOptionLabel="Quận/Huyện"/>
+                                </div>
+                            </div>
+                              <div class=" col-md-2" id="selectchuyennganh3" >
+                                    <div class="form-group" style="width: 100%">
+                                 <f:form.select name="searchparam[kategorienghanh]"   options="{kategorienganhs}"   optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="" prependOptionLabel="Ngành/Nhóm Ngành"/>
+                            </div>
+                              </div>
+                               <div class=" col-md-2">
+                                 <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                                    <f:form.select name="searchparam[unterkategorienganh]"   options="{unterkategorienganhs}"    optionValueField="uid"  optionLabelField="ten" class="form-control"  prependOptionValue="" prependOptionLabel="Chuyên Ngành"/>
+                            </div>
+                              </div>                           
+                  
+   
+                            <div class="col-md-3">
+                                <input type="text"  placeholder="Từ cần tìm (Quí vị có thể bỏ qua)"  class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <div class="dangnhap-header">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt" >Tìm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    </f:comment>
+            
+</f:section>

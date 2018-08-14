@@ -1,0 +1,243 @@
+{namespace boot=BK2K\BootstrapPackage\ViewHelpers}
+<header style="border: 0 !important;box-shadow: 0 !important" class="navbar navbar-{themeNavigationstyle}{f:if(condition:logoFile,then:' navbar-has-image')}{f:if(condition:themeNavigationtype, else:' navbar-top', then:' navbar-{themeNavigationtype} navbar-fixed-{themeNavigationtype}')}">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header navbar-header-main"   style="padding-left: 15px;">
+                <f:if condition="{logoFile}">
+                    <f:then>
+                        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-image">
+                            <f:comment>
+                               <img src="{f:uri.image(src: logoFile)}" alt="{logoAlt}" height="{logoHeight}" width="{logoWidth}">
+                            </f:comment>
+                                <img src="{f:uri.image(src: logoFile)}" alt="{logoAlt}"  width="280" height="40c">
+                        </f:link.page>
+                    </f:then>
+                    <f:else>
+                        <f:link.page pageUid="{rootPage}" class="navbar-brand">{siteTitle}</f:link.page>
+                    </f:else>
+                </f:if>
+                <f:if condition="{f:cObject(typoscriptObjectPath:'lib.navigation.main')}">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </f:if>
+                <span class="navbar-header-border-bottom"></span>
+            </div>
+            <nav class="navbar-collapse collapse mainnavigation" style="color: #27475e;font-family: Univers-67-CondBold,Arial,sans-serif;" role="navigation">
+                <ul class="nav navbar-nav navbar-main">
+                    <f:cObject typoscriptObjectPath="lib.navigation.main"/>
+                    <f:if condition="{boot:login(name:123)}==1941">
+                        <f:then>
+                        <li class="mainto" style="padding: 2.5px ">
+                        <a href="admin" style="background: #088a08; padding: 12px 5px !important;color: #ffff00 !important;">Quản Trị/Đăng Xuất</a>
+                          </li>
+                        </f:then>
+                        <f:else>
+                    <li class="mainto" style="padding: 2.5px ">
+                        <a href="dang-nhap" style="background: #FF0000; padding: 12px 5px !important;color: #fff !important;">Đăng Nhập/Đăng Ký</a>
+                    </li>
+                        </f:else>
+                    </f:if>
+                </ul>
+            </nav>
+        </div>
+      
+        <f:if condition="{boot:searchHiden()}==1941">
+            <f:else>
+                <f:if condition="{boot:login(name:123)}==1941">
+                           <f:then>
+                       <div class="row  mainnho">
+                            <div class="col-md-12" >
+                                <div class="col-md-10"></div>
+                                <div class="col-md-2" style="margin-top: 5px; padding: 0;" >        
+                                    <div >
+                        <a href="admin"  class="btn btn-primary btn-lg btn-block  dangnhapbt" style="background: #088a08;margin-bottom: 5px; padding: 8px 5px !important;color: #fff !important;float: right; width: 100%">Quản Trị/Đăng Xuất</a>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div> 
+                        </f:then>
+                    <f:else>
+                        <div class="row  mainnho">
+                            <div class="col-md-12" >
+                                <div class="col-md-10"></div>
+                                <div class="col-md-2" style="margin-top: 5px; padding: 0;" >        
+                                    <div >
+                                        <a  href="dang-nhap" class="btn btn-primary btn-lg btn-block  dangnhapbt" style="margin-bottom: 5px; padding: 8px 5px !important;color: #fff !important;float: right; width: 100%">Đăng Nhập/Đăng Ký</a>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>  
+                    </f:else>
+                </f:if>
+            </f:else>
+        </f:if>
+
+        <f:if condition="{boot:searchHiden()}==1941">
+                   <f:then>
+    
+                  <div class="row searchform-hidden">
+            <div class="col-md-12">
+                <f:cObject typoscriptObjectPath="lib.navigationsearch"/>
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+                    <form class="form-inline" role="form">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group" id="selecttinhthanhpho">
+                                    <f:form.select property="tinhthanhpho" multiple="multiple" options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" style="width:50%"/>
+                                </div>
+                            </div>                          
+                            <div class="col-md-2">
+                                <div class="form-group" >
+                                    <div id="ajaxform">
+                                        <f:form.select property="quanhuyen"  multiple="multiple"  options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control" style="width:50%"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <f:comment>
+                         <div class="col-md-2">
+                                <div class="form-group">
+
+                                    <select class="form-control" >
+                                        <option>Tĩnh/Thành Phố</option>
+                                        <option>2asdasdasdasdasdasdasdasdasdasdasdasdsad</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="form-group">
+
+                                    <select class="form-control">
+                                        <option>Quận Huyện &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class=" col-md-2">
+                                <div class="form-group">
+                                    <select class="form-control"  >
+                                        <option>Nhóm Ngành &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class=" col-md-2">
+                                <div class="form-group">
+                                    <select class="form-control"  >
+                                        <option>Nhóm Ngành &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>                                
+                            </f:comment>
+   
+                            <div class="col-md-3">
+                                <input type="text"  placeholder="Quí vị hãy nhập vào từ cần tìm"  class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <div class="dangnhap-header">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt" >Tìm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>  
+                                
+                    </f:then>
+            <f:else>
+
+                  <div class="row">
+            <div class="col-md-12">
+                <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+                    <form class="form-inline" role="form">
+                        <div class="row">
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+
+                                    <select class="form-control" >
+                                        <option>Tĩnh/Thành Phố</option>
+                                        <option>2asdasdasdasdasdasdasdasdasdasdasdasdsad</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="form-group">
+
+                                    <select class="form-control">
+                                        <option>Quận Huyện &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class=" col-md-2">
+                                <div class="form-group">
+                                    <select class="form-control"  >
+                                        <option>Nhóm Ngành &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class=" col-md-2">
+                                <div class="form-group">
+                                    <select class="form-control"  >
+                                        <option>Nhóm Ngành &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text"  placeholder="Quí vị hãy nhập vào từ cần tìm"  class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <div class="dangnhap-header">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block  dangnhapbt" >Tìm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>  
+                                
+            </f:else>
+        </f:if>
+
+    </div>
+</header>

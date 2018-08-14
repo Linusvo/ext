@@ -1,0 +1,109 @@
+{namespace m=VOV\Thosuachua\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+      
+    <div class="main-container">
+        <article class="teaser-list">
+            <header>
+                <h2 style="height: 24px;">Kết Quả Tìm Kiếm</h2>
+                <i class="icon-content">
+                    <p class="glyphicon glyphicon-th"></p>
+                </i>
+            </header>
+               <br> 
+            <div class="content-home">
+                <div class="same-height">
+                        <f:if condition="{tintimviecs}">
+                            <f:then>
+                                <m:Paginate objects="{tintimviecs}" as="paginatedObjekt" configuration="{itemsPerPage: 40, insertAbove: 0, insertBelow: 1}">
+                                    <f:for each="{paginatedObjekt}" as="tintimviec" iteration="fooIterator">
+                                        <div class="news">
+                                <span><f:format.date date="now" format="d.m.Y" />&nbsp;.&nbsp;
+                                    <f:link.action pageUid="72"  pluginName="Tintimviecliste"  controller="Tintimviec"  action="show" arguments="{tintimviec: tintimviec}">
+                                        <f:format.crop maxCharacters="50">{tintimviec.tennguoitim}</f:format.crop>
+                                    </f:link.action></span>
+                                            <p>
+                                                <f:link.action pageUid="72"  pluginName="Tintimviecliste"  controller="Tintimviec"  action="show" arguments="{tintimviec: tintimviec}">
+                                                    <f:format.crop maxCharacters="250">{tintimviec.noidung}</f:format.crop>
+                                                </f:link.action>
+                                            </p>
+                                        </div>
+                                    </f:for>
+                                </m:Paginate>
+                            </f:then>
+                            <f:else>
+                               <b style="color: #FF4000; margin-bottom: 30px;">Không có xưởng nào được tìm thấy </b><br><br>
+                            </f:else>
+                        </f:if>
+
+
+                </div>
+     
+            </div>
+        </article>
+    </div>
+
+    
+    
+    <f:comment>
+        
+
+<h1>Listing for Tintimviec</h1>
+
+<f:flashMessages renderMode="div" />
+
+<table  class="tx_thosuachua" >
+	<tr>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.title" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.noidung" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.hinhanh" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.tailieu" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.tennguoitim" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.mieutacanhan" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.diachi" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.lienhe" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.phone" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.fax" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.www" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.batdau" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_tintimviec.ketthuc" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{tintimviec}" as="tintimviec">
+		<tr>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.noidung}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.hinhanh.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.tailieu.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.tennguoitim}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.mieutacanhan}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.diachi}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.lienhe}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.phone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.fax}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.www}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.batdau}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tintimviec : tintimviec}"> {tintimviec.ketthuc}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{tintimviec : tintimviec}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{tintimviec : tintimviec}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Tintimviec</f:link.action>
+    </f:comment>
+</f:section>

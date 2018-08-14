@@ -1,0 +1,79 @@
+
+plugin.tx_thosuachua_search {
+	view {
+		templateRootPath = {$plugin.tx_thosuachua_search.view.templateRootPath}
+		partialRootPath = {$plugin.tx_thosuachua_search.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_thosuachua_search.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_thosuachua_search.persistence.storagePid}
+	}
+}
+
+plugin.tx_thosuachua_admin {
+	view {
+		templateRootPath = {$plugin.tx_thosuachua_admin.view.templateRootPath}
+		partialRootPath = {$plugin.tx_thosuachua_admin.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_thosuachua_admin.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_thosuachua_admin.persistence.storagePid}
+	}
+}
+
+plugin.tx_thosuachua_hienthi {
+	view {
+		templateRootPath = {$plugin.tx_thosuachua_hienthi.view.templateRootPath}
+		partialRootPath = {$plugin.tx_thosuachua_hienthi.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_thosuachua_hienthi.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_thosuachua_hienthi.persistence.storagePid}
+	}
+}
+
+plugin.tx_thosuachua._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-thosuachua table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-thosuachua table th {
+		font-weight:bold;
+	}
+
+	.tx-thosuachua table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+ # Module configuration
+module.tx_thosuachua_thongke {
+	persistence {
+		storagePid = {$module.tx_thosuachua_thongke.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_thosuachua_thongke.view.templateRootPath}
+		partialRootPath = {$module.tx_thosuachua_thongke.view.partialRootPath}
+		layoutRootPath = {$module.tx_thosuachua_thongke.view.layoutRootPath}
+	}
+}

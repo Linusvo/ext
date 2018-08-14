@@ -1,0 +1,41 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Duongpho</h1>
+
+<f:flashMessages />
+
+<table  class="tx_thosuachua" >
+	<tr>
+		<th><f:translate key="tx_thosuachua_domain_model_duongpho.ten" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_duongpho.map" /></th>
+		<th><f:translate key="tx_thosuachua_domain_model_duongpho.sonha" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{duongphos}" as="duongpho">
+		<tr>
+			<td><f:link.action action="show" arguments="{duongpho : duongpho}"> {duongpho.ten}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{duongpho : duongpho}"> {duongpho.map}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{duongpho : duongpho}"> {duongpho.sonha}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{duongpho : duongpho}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{duongpho : duongpho}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Duongpho</f:link.action>
+</f:section>

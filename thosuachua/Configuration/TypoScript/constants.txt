@@ -1,0 +1,60 @@
+
+plugin.tx_thosuachua_search {
+	view {
+		# cat=plugin.tx_thosuachua_search/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:thosuachua/Resources/Private/Templates/
+		# cat=plugin.tx_thosuachua_search/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:thosuachua/Resources/Private/Partials/
+		# cat=plugin.tx_thosuachua_search/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:thosuachua/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_thosuachua_search//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+plugin.tx_thosuachua_admin {
+	view {
+		# cat=plugin.tx_thosuachua_admin/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:thosuachua/Resources/Private/Templates/
+		# cat=plugin.tx_thosuachua_admin/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:thosuachua/Resources/Private/Partials/
+		# cat=plugin.tx_thosuachua_admin/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:thosuachua/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_thosuachua_admin//a; type=string; label=Default storage PID
+		storagePid = 37
+	}
+}
+
+plugin.tx_thosuachua_hienthi {
+	view {
+		# cat=plugin.tx_thosuachua_hienthi/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:thosuachua/Resources/Private/Templates/
+		# cat=plugin.tx_thosuachua_hienthi/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:thosuachua/Resources/Private/Partials/
+		# cat=plugin.tx_thosuachua_hienthi/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:thosuachua/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_thosuachua_hienthi//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+module.tx_thosuachua_thongke {
+	view {
+		# cat=module.tx_thosuachua_thongke/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:thosuachua/Resources/Private/Backend/Templates/
+		# cat=module.tx_thosuachua_thongke/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:thosuachua/Resources/Private/Backend/Partials/
+		# cat=module.tx_thosuachua_thongke/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:thosuachua/Resources/Private/Backend/Layouts/
+	}
+	persistence {
+		# cat=module.tx_thosuachua_thongke//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

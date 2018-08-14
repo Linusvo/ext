@@ -1,0 +1,138 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:       <f:comment>        <f:format.htmlentitiesDecode> {nhomnganhjson} </f:format.htmlentitiesDecode></f:comment>
+
+List.html: keep pageUid="{pageuid}" controller="{controllername}" action="{actioname}"
+pluginName="search" controller="Nhomtho" action="hienthi"
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $( function() {
+            var availableTags =
+                [
+                    "Thợ Sửa Nhà, Thợ Cải Tạo Nhà, Thợ Nâng Cấp Nhà",
+                    "Tho Sua Nha,Tho Nang Cap Nha,Tho Cai Tao Nha",
+                    "Thợ Lắp Đặt Ống Nước, Thợ Sửa Chửa Ống Nước, Thợ Sửa Ống Nước",
+                    "Tho Lap Dat Ong Nuoc, Tho Sua Chua Ong Nuoc, Tho Sua Ong Nuoc",
+                    "Thợ Khoan Cắt Bê Tông,Thợ Tháo Dỡ Công Trình",
+                    "Tho Khoan Cat Be Tong,Tho Thao Do Cong Trinh",
+                    "Thợ Sơn,Thợ Quét Vôi,Thợ Quét Ve,Thợ Bả Matit,Thợ Tẩy Mốc,Sơn Tĩnh Điện",
+                    "Tho Son,Tho Quet Voi,Tho Quet Ve,Son Tinh Dien, Tho Ba Matit, Tho Tay Moc",
+                    "Thợ Trang Trí Nội Thất, Thợ Thạch Cao, Thợ Óp Lát, Thợ Trần",
+                    "Tho Trang Tri Noi That, Tho Thach Cao, Tho Op Lat, Tho Tran",
+                    "Thợ Chống Thấm, Thợ Chống Nóng, Thợ Cách Âm",
+                    "Tho Chong Tham, Tho Chong Nong, Tho Cach Am",
+                    "Thợ Sữa Thang Máy",
+                    "Tho Sua Thang May",
+                    "Vận Chuyển, Chuyển Nhà, Bốc Vác, Thợ Phụ Hồ, Thợ Hồ",
+                    "Van Chuyen, Chuyen Nha, Boc Vac,Tho Phu Ho, Tho Ho",
+                    "Dọn Vệ Sinh, Dọn Nhà, Thu Dọn Công Trình",
+                    "Don Ve Sinh, Don Nha, Thu Don Cong Trinh",
+                    "Thợ Hút Thông Bể Phốt,Thợ Hút Hầm Cầu, Thợ Thông Cống",
+                    "Tho Hut Thong Be Phot, Tho Hut Ham Cau, Tho Thong Cong",
+                    "Thợ Sửa ÔTô",
+                    "Thợ Sửa Xe Máy",
+                    "Thợ Sữa Xe Đạp",
+                    "Tho Sua Oto",
+                    "Tho Sua Xe May",
+                    "Tho Sua Xe Dap",
+                    "Máy Công Trình,Máy Nông Nghiệp",
+                    "May Cong Trinh,May Nong Nghiep",
+                    "Thợ Sửa Điện",
+                    "Tho Sua Dien",
+                    "Thợ Sữa Điện Lạnh,Thợ Sữa Điều Hòa,Thợ Sữa Tủ Lạnh",
+                    "Tho Sua Dien Lanh,Tho Sua Dieu Hoa,Tho Sua Tu Lanh",
+                    "Thợ Sửa Điện Tử, Thợ Sửa Ti Vi,Thợ Sửa Loa Đài",
+                    "Tho Sua Dien Tu, Tho Sua Tivi, Tho Sua Loa Dai",
+                    "Thợ Sửa Máy Tính,Thợ Sửa Máy In, Thợ Lắp Đặt Internet",
+                    "Tho Sua May Tinh, Tho Sua May In, Tho Lap Dat Internet",
+                    "Thợ Sửa Điện Thoại, Thợ Sữa Các Thiết Bị Truyền Thông",
+                    "Tho Sua Dien Thoai, Tho Sua Cac Thiet Bi Truyen Thong",
+                    "Lắp Đặt Hệ Thống An Ninh, Lắp Đặt Hệ Thống Báo Cháy",
+                    "Lap Dat He Thong An Ninh, Lap Dat He Thong Bao Chay",
+                    "Thợ Sửa Nhạc Cụ, Thợ Sửa Đồng Hồ",
+                    "Tho Sua Nhac Cu, Tho Sua Dong Ho",
+                    "Thợ Mộc, Thợ Gỗ, Thợ Cữa",
+                    "Tho Moc, Tho Go, Tho Cua",
+                    "Thợ Khóa",
+                    "Tho Khoa",
+                    "Thợ Nhôm Kính",
+                    "Tho Nhom Kinh",
+                    "Thợ Hàn, Thợ Sắt",
+                    "Tho Han, Tho Sat",
+                    "Thợ Gò, Thợ Đúc,Thợ Tiện",
+                    "Tho Go, Tho Duc,Tho Tien",
+                    "Thợ Cữa Thủy Lực, Thợ Cữa Cuốn",
+                    "Tho Cua Thuy Luc, Tho Cua Cuon",
+                    "Biển Quảng Cáo, Biển Hiệu",
+                    "Bien Quang Cao, Bien Hieu",
+                ]
+            ;
+            $( "#tags" ).autocomplete({
+                source: availableTags
+            });
+        } );
+    </script>
+    <style>
+        select {
+            width: 100%!important;
+        }
+
+    </style>
+    <div class="row">
+        <div class="col-md-12">
+
+
+    <br>
+    <!---tin tim viec action="list" name="xuong" controller="Tintimviec"  pluginName="Tintimviecsearch" -->
+        <div class="searchform-vov" style="background: #3374ad; padding: 18px 15px">
+            <f:form   pageUid="71"  class="form-inline" style="margin:0!important">
+                <div class="row">
+
+                    <div class=" col-md-4">
+                        <div id="chuyennganhsearch" class="form-group" style="width: 100%">
+                            <f:format.htmlentitiesDecode>   {unterkategorienganh1s}</f:format.htmlentitiesDecode>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group" id="selecttinhthanhpho3" style="width: 100%">
+                            <f:form.select  style="width: 100%" name="searchparam[tinhthanhpho]"  options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" prependOptionValue="9999" prependOptionLabel="Chọn Tỉnh-Thành Phố"/>
+                        </div>
+                    </div>                          
+                    <div class="col-md-3">
+                        <div id="ajaxformsearch" class="form-group" style="width: 100%">
+                            <f:form.select  style="width: 100%" name="searchparam[quanhuyen]"   options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control"  prependOptionValue="9999" prependOptionLabel="Chọn Quận Huyện"/>
+                        </div>
+                    </div>
+<f:comment>
+                    <div class="col-md-4 ui-widget">
+                        <input type="text"  name="searchparam[searchtext]" style="width: 100%" placeholder="Từ cần tìm (Quí vị có thể bỏ qua mục này)"  class="form-control " id="tags">
+                    </div>
+</f:comment>
+
+                    <div class="col-md-2">
+                        <div class="dangnhap-header">
+                            <button type="submit"  class="btn btn-primary btn-lg btn-block  dangnhapbt form-control" style="color:#fff!important;width: 100%" >Tìm</button>
+                        </div>
+                    </div>
+                </div>
+            </f:form>
+
+        </div>
+    </div>
+    </div>
+</f:section>

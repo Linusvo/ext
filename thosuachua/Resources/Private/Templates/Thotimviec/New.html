@@ -1,0 +1,38 @@
+
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <br>  <br>
+    <h2 style=" background: #088a08; padding: 10px ; margin-bottom: 35px;color:#fff ">Tạo Mẩu Tin Thợ Tìm Việc</h2>
+
+    <div data-example-id="table-within-panel" class="bs-example">
+        <div class="panel panel-default" style="padding: 15px;">
+            <br>
+            <div class="formularerror" style="margin: 0 0 30px 0; background-color:#fce2db; color: #282a2a;padding: 15px 0 10px 15px;border: 2px solid red;display: none">
+                <p style="font-size: 18px; font-color: red">Quí vị hãy chọn Tỉnh/Thành Phố, Ngành Nghề và điền vào Tiêu Đề Mẩu Tin, Giới Thiệu Ngắn, Nội Dung Mẩu Tin.</p>
+            </div>
+            <f:form action="create" class="formularSubmit"   enctype="multipart/form-data"  name="newThotimviec" object="{newThotimviec}">
+
+                <f:render partial="Thotimviec/FormFields1" arguments="{unterkategorienganh1s:unterkategorienganh1s,unterkategorienganhs:unterkategorienganhs,kategorienganhs:kategorienganhs,nhomtho:nhomtho, quanhuyens:quanhuyens, tinhthanhs: tinhthanhs,newfunktion:newfunktion}" />
+                <br>
+                <hr class="hrcolor">
+                <a class="btn pull-left" href="/admin" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #E05500; color:#fff; text-shadow: none">Quay Lại</a>
+                <p type="submit"  class="btn pull-right submitformular" style="font-weight: bold;font-size: 20px;padding: 6px 30px;  background: #E05500; color:#fff; text-shadow: none">Lưu Mẩu Tin</p>
+                <br> <br> <br>
+            </f:form>
+
+        </div>
+    </div>
+
+</f:section>

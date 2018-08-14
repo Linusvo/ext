@@ -1,0 +1,104 @@
+             
+
+
+<div data-example-id="table-within-panel" class="bs-example" style="margin-top:8px;">
+    <div class="panel panel-default"> 
+        <div class="panel-heading" style="background: #36AD33; font-size:18px; font-weight: bold;color: #FFFF00; padding: 13px 11px; "><b>Chi Tiết Mẩu Tin </b></div>
+        <div class="panel-body"> 
+
+        </div>    
+
+        <table class="table"> 
+            <tbody> 
+                 <tr> 
+                    <td   class="detailinfo1">Tiêu Đề</td> 
+                    <td class="detailinfo"><b>{viectimtho.title}</b></td>   
+                </tr> 
+                 <tr> 
+                    <td   class="detailinfo1">Tên Công Ty/Người Tìm</td> 
+                    <td class="detailinfo"><b>{viectimtho.tennguoitim}</b></td>   
+                </tr> 
+                <tr> 
+                    <td  class="detailinfo1"><b>Tiêu Đề</b></td> 
+                    <td class="detailinfo">  <f:format.html><b  style="font-size: 17px"> {viectimtho.noidung} </b>   </f:format.html></td>
+                </tr> 
+                <tr> 
+                    <td   class="detailinfo1">Miêu tả công ty</td> 
+                    <td class="detailinfo" style="font-size: 17px;line-height: 1; !important;"><f:format.html>{viectimtho.mieutacongviec}</f:format.html></td>
+                </tr> 
+                <tr>
+                    <td  class="detailinfo1">Địa Chỉ liên hệ</td> 
+                    <td class="detailinfo">{viectimtho.diachi}  </tr>
+                <tr> 
+                    <td  class="detailinfo1">E-mail</td> 
+                    <td class="detailinfo">{viectimtho.email}</td> 
+                </tr> 
+                <tr> 
+                    <td  class="detailinfo1">Điện thoại</td> 
+                    <td class="detailinfo">{viectimtho.phone}</td> 
+                </tr> 
+                <tr> 
+                    <td   class="detailinfo1">Fax</td> 
+                    <td class="detailinfo">{viectimtho.fax}</td> 
+                </tr> 
+                <tr>        
+                    <td  class="detailinfo1">Địa chỉ trang Web</td> 
+                    <td class="detailinfo">{viectimtho.www}</td> 
+                </tr> 
+                <tr> 
+                    <td  class="detailinfo1"><b>Nhóm Ngành</b></td> 
+                    <td class="detailinfo">
+            <f:for each="{viectimtho.kategorienganh}" as="kategorienganh">
+                {kategorienganh.ten},
+            </f:for>   
+            </td> 
+            </tr> 
+            <tr> 
+                <td  class="detailinfo1"><b>Chuyên Ngành</b></td> 
+                <td class="detailinfo">
+            <f:for each="{viectimtho.unterkategorienganh}" as="unterkategorienganh">
+                {unterkategorienganh.ten},
+            </f:for>   
+            </td> 
+            </tr> 
+            <tr> 
+                <td  class="detailinfo1">Tĩnh/Thành Phố</td> 
+                <td class="detailinfo">
+            <f:for each="{viectimtho.tinhthanhpho}" as="tinhthanhpho">
+                {tinhthanhpho.ten},
+            </f:for>   
+            </td>            
+            </tr>
+            <tr> 
+                <td   class="detailinfo1">Quận/Huyện/Tp Trực thuộc</td> 
+                <td class="detailinfo">
+            <f:for each="{viectimtho.quanhuyen}" as="quanhuyen">
+                {quanhuyen.ten},
+            </f:for>   
+            </td>  
+
+            </tr>
+            <tr> 
+                <td   class="detailinfo1">Phường/Xã</td> 
+                <td class="detailinfo">{viectimtho.phuongxa}  </tr>
+            <tr> 
+            <tr>        
+               <td   class="detailinfo1">Hình ảnh</td> 
+                <td style="color: #000; ">
+                    <br>
+                    <f:image src="fileadmin/dummy1s.jpg" alt="Không Có Hình Ảnh" width="250c" />
+                    <br>
+                </td> 
+            </tr> 
+            </tbody> 
+
+        </table>
+    </div> 
+    <div class="row">   
+        <div class="col-md-12">
+            <a href="{listhomeurl}" class="pull-left btn btn-primary"  style="font-weight: bold;font-size: 16px;" ><< Quay lại</a>
+        </div>     
+    </div>
+</div>
+<br><br>    <br><br>    <br><br>    <br><br>
+

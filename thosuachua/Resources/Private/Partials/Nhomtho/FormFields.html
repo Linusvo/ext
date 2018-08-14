@@ -1,0 +1,134 @@
+ 
+<!-- Small button group -->
+
+<div class="form-group" id="selecttinhthanhpho">
+    <label for="">Tĩnh/Thành Phố</label>
+    <f:form.select property="tinhthanhpho" multiple="multiple" options="{tinhthanhs}" optionValueField="uid" optionLabelField="ten" class="form-control" style="width:50%"/>
+</div>
+<div class="form-group" >
+
+    <label for="">Quận/Huyện</label>
+    <div id="ajaxform">
+        <f:form.select property="quanhuyen"  multiple="multiple"  options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control" style="width:50%"/>
+    </div>
+    <f:comment>
+        <f:form.select property="quanhuyen"  options="{quanhuyens}" optionValueField="uid" optionLabelField="ten" class="form-control" style="width:50%"/>
+    </f:comment>
+
+</div>
+<div class="form-group">
+    <label for="">Phường/Xã</label>
+    <f:form.textfield name="phuongxaten" class="form-control" style="width:50%"/>
+</div>
+
+<div class="form-group">
+    <label for="">Tên Công Ty / Nhóm Thợ / Cá Nhân</label>
+       <f:form.textfield  type="text" property="ten" class="form-control" />
+</div>
+
+<div class="form-group" id="selectchuyennganh">
+    <label for="">Nhóm Ngành</label> 
+    <f:comment>
+        <f:form.select property="kategorienghanh"  options="{kategorienganhs}" multiple="multiple"  optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+    </f:comment>
+    <f:form.select property="kategorienghanh"   options="{kategorienganhs}" multiple="multiple"  name="kategorienghanh" optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+</div>
+<div class="form-group">
+    <label for="">Chuyên Ngành</label>
+    <div id="chuyennganh">
+        <f:form.select property="unterkategorienganh"   options="{unterkategorienganhs}" multiple="multiple"  name="unterkategorienganhs" optionValueField="uid"  optionLabelField="ten" class="form-control" style="width:50%"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="">Miêu tả công ty</label>
+    <f:form.textarea property="mieuta" cols="20" rows="5" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Địa Chỉ</label>
+    <f:form.textfield  property="diachi"  class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Điện Thoại</label>
+    <f:form.textfield property="telephone" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Email Liên Hệ</label>
+    <f:form.textfield property="emaillienhe" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Fax</label>
+    <f:form.textfield property="fax" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Trang Web</label>
+    <f:form.textfield property="www" class="form-control"/>
+</div>
+
+
+
+
+
+<f:comment><label for="ten">
+        <f:translate key="tx_thosuachua_domain_model_nhomtho.ten" />
+    </label><br />
+    <f:form.textfield property="ten" /><br />
+    <label for="mieuta">
+        <f:translate key="tx_thosuachua_domain_model_nhomtho.mieuta" />
+    </label><br />
+    <f:form.textarea property="mieuta" cols="40" rows="15" /><br />
+    <label for="tailieu">
+        <f:translate key="tx_thosuachua_domain_model_nhomtho.tailieu" />
+    </label><br />
+    <span>File upload is not implemented!</span><br /><br />
+    <label for="diachi">
+        <f:translate key="tx_thosuachua_domain_model_nhomtho.diachi" />
+    </label><br />
+    <f:form.textfield property="diachi" /><br />
+    <label for="sonha">
+        <f:translate key="tx_thosuachua_domain_model_nhomtho.sonha" />
+    </label><br />
+    <f:form.textfield property="sonha" /><br /></f:comment>
+
+<f:comment>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Mục đích đăng tin</label>
+        <select class="form-control" style="width:50%">
+            <option>Chọn mục đích</option>
+            <option>Thợ tìm việc</option>
+            <option>Việc tìm thợ</option>
+        </select>
+    </div>
+
+    <table class="table"> 
+        Trường hợp nhóm ngành quí vị không có trong danh mục của chúng tôi, quí vị có thể sử dụng nhập dữ liệu vào ô bên cạnh.
+
+        <tbody> 
+            <tr> 
+                <td >                <div class="form-group">
+
+
+                        <label for="exampleInputEmail1">Nhóm Ngành</label>
+                        <select class="form-control" >
+                            <option>Thợ Xây</option>
+                            <option>Thợ tìm việc</option>
+                            <option>Việc tìm thợ</option>
+                        </select>
+                    </div></td> 
+                <td >                <div class="form-group">
+
+                        <div class="btn-group ">
+                            <label for="exampleInputEmail1">Nhóm Ngành</label>
+                            <div>       <input type="text" placeholder="Search" class="form-control"></div>
+
+                        </div>
+                    </div> </td> 
+
+            </tr> 
+
+
+        </tbody> 
+
+
+    </table>
+</f:comment>  

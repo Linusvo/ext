@@ -1,0 +1,63 @@
+<f:layout name="Default"/>
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <div class="main-container" style="padding-top: 10px !important">
+        <article class="teaser-list">
+            <header class="toggle" style="padding-top: 1.3em!important">
+                <h2 style="height: 12px;font-size: 1em!important;">Tin Tìm Thợ Mới</h2>
+                <i class="icon-content">
+                    <p class="glyphicon glyphicon-th" style="font-size: 1.5em;;padding-top:0.26em"></p>
+                </i>
+            </header>
+
+            <div class="toggle-slide contact rightmenu">
+                <div class="side-box">
+                    <ul style="margin-bottom: 0 !important;">
+
+
+                        <f:for each="{viectimthos}" as="viectimtho" iteration="Iterator">
+                            <f:if condition="{Iterator.index} < 4">
+                                        <f:comment>  <li>
+                                            <a style=" padding: 0.7em 1em 0.7em!important;" >
+                                                <b>
+
+                                                    <f:format.date format="d.m.Y">{viectimtho.crdate}</f:format.date>: </b>
+                                                <f:format.crop maxCharacters="120">{viectimtho.title}</f:format.crop>
+                                            </a></li></f:comment>
+                                <li>
+                                    <f:link.action pageUid="54" pluginName="Hienthi" controller="Viectimtho" action="show"
+                                                   arguments="{viectimtho: viectimtho}"
+                                                   style=" padding: 0.7em 1em 0.7em!important;">
+                                        <b>
+                                            <f:format.date format="d.m.Y">{viectimtho.crdate}</f:format.date>
+                                            : </b>
+                                        <f:format.crop maxCharacters="120">{viectimtho.title}</f:format.crop>
+                                    </f:link.action>
+                                </li>
+                            </f:if>
+                        </f:for>
+                        <li style="color:#fff;border-top:1px solid #000 !important;background: #D8D8D8 !important; border:none !important">
+                            <f:link.action action="list"
+                                           style="color:#000;font-size:15px; font-weight: bold !important; padding: 0.7em 1em 0.7em!important;">
+                                Xem Tất Cả
+                            </f:link.action>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </div>
+</f:section>
